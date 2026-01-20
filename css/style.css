@@ -21,7 +21,10 @@ header {
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    /* Center everything */
+    gap: 1px;
+    /* Bring logo and nav closer ("not far") */
 }
 
 /* Brand / Logo Styles */
@@ -73,7 +76,8 @@ nav ul {
 }
 
 nav ul li {
-    padding: 0 15px;
+    padding: 0 8px;
+    /* Reduced padding between links */
     border-left: 1px solid #ccc;
     line-height: 1;
 }
