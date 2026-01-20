@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Brand / Logo Styles */
+/* Brand / Logo Styles */
+/* Brand / Logo Styles */
+/* Brand / Logo Styles */
+.container {
+    display: inline-table;
+    text-decoration: none;
+    line-height: 1;
+    width: auto;
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    height: 44px;
+    width: auto;
+    max-width: none;
+    margin: 0 auto;
+}
+
+.tagline {
+    display: table-caption;
+    caption-side: bottom;
+    margin: 0;
+    margin-top: -3px;
+    font-size: 8px;
+    font-weight: bold;
+    color: #A07040;
+    /* Gold color */
+    white-space: nowrap;
+    font-family: Arial, sans-serif;
+    transform: scale(0.95) translateX(6px);
+    /* Scale guess for shorter text + Optical shift */
+    transform-origin: center top;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    padding: 0 15px;
+    border-left: 1px solid #ccc;
+    /* Separator line on the left */
+    line-height: 1;
+}
+
+nav ul li:last-child {
+    border-left: none;
+    /* No separator for the last item */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s;
+    display: block;
+}
+
+nav ul li a:hover {
+    color: #d32f2f;
+}
