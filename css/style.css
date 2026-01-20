@@ -73,6 +73,8 @@ nav ul {
     list-style: none;
     display: flex;
     align-items: center;
+    margin-top: 10px;
+    /* Push nav down to align with visual center of logo+tagline */
 }
 
 nav ul li {
@@ -97,4 +99,31 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #d32f2f;
+}
+
+/* Hero Banner Styles */
+.hero-banner {
+    background-color: #1e40af;
+    /* Deep blue similar to image */
+    text-align: center;
+    padding: 40px 0;
+    width: 100%;
+    color: #fff;
+    margin-top: 0;
+}
+
+.hero-text-small {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+.hero-text-large {
+    font-size: 56px;
+    font-weight: 800;
+    /* Extra bold */
+    line-height: 1;
+    margin: 0;
 }
