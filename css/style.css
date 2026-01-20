@@ -25,40 +25,46 @@ header {
 }
 
 /* Brand / Logo Styles */
-/* Brand / Logo Styles */
-/* Brand / Logo Styles */
-/* Brand / Logo Styles */
 .container {
-    display: inline-table;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* מרכז את הטקסט והתמונה אופקית */
     text-decoration: none;
-    line-height: 1;
-    width: auto;
-    text-align: center;
+    width: fit-content;
+    position: relative;
+    /* עוזר במיקום */
 }
 
 .logo {
     display: block;
     height: 44px;
     width: auto;
-    max-width: none;
     margin: 0 auto;
+    /* ביטלתי את המרווח השלילי כאן כדי לשלוט בזה דרך הטקסט */
+    margin-bottom: 0;
+
+    /* וודא שהתמונה נמצאת מאחור אם יש חפיפה */
+    position: relative;
+    z-index: 1;
 }
 
 .tagline {
-    display: table-caption;
-    caption-side: bottom;
-    margin: 0;
-    margin-top: -3px;
-    font-size: 8px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 5px;
     font-weight: bold;
     color: #A07040;
-    /* Gold color */
+
+    margin-top: -12px;
+
+
+    position: relative;
+    z-index: 10;
     white-space: nowrap;
-    font-family: Arial, sans-serif;
-    transform: scale(0.95) translateX(6px);
-    /* Scale guess for shorter text + Optical shift */
-    transform-origin: center top;
+    line-height: 1;
 }
+
+
 
 nav ul {
     list-style: none;
@@ -69,20 +75,18 @@ nav ul {
 nav ul li {
     padding: 0 15px;
     border-left: 1px solid #ccc;
-    /* Separator line on the left */
     line-height: 1;
 }
 
 nav ul li:last-child {
     border-left: none;
-    /* No separator for the last item */
 }
 
 nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 9px;
     transition: color 0.3s;
     display: block;
 }
