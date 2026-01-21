@@ -41,7 +41,7 @@ header {
 
 .logo {
     display: block;
-    height: 44px;
+    height: 100px;
     width: auto;
     margin: 0 auto;
     /* ביטלתי את המרווח השלילי כאן כדי לשלוט בזה דרך הטקסט */
@@ -54,11 +54,11 @@ header {
 
 .tagline {
     font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 5px;
+    font-size: 10px;
     font-weight: bold;
     color: #A07040;
 
-    margin-top: -12px;
+    margin-top: -15%;
 
 
     position: relative;
@@ -91,8 +91,7 @@ nav ul li:last-child {
 nav ul li a {
     text-decoration: none;
     color: #333;
-    font-weight: 600;
-    font-size: 9px;
+    font-size: 15px;
     transition: color 0.3s;
     display: block;
 }
@@ -177,6 +176,8 @@ nav ul li a:hover {
     width: 100%;
     color: #fff;
     margin-top: 0;
+    position: relative;
+    z-index: 5;
 }
 
 .hero-text-small {
