@@ -101,6 +101,73 @@ nav ul li a:hover {
     color: #d32f2f;
 }
 
+/* Dropdown Menu Styles */
+.dropdown-parent {
+    position: relative;
+    /* To position the dropdown absolute relative to this */
+}
+
+/* Arrow Indicator */
+.dropdown-parent>a::after {
+    content: "▼";
+    font-size: 8px;
+    margin-right: 4px;
+    vertical-align: middle;
+    color: #555;
+}
+
+.dropdown-parent:hover>a::after {
+    color: #d32f2f;
+}
+
+/* Dropdown Container */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 280px;
+    background-color: #1e40af;
+    /* Dark blue background */
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    margin-top: 5px;
+    border-radius: 4px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dropdown-parent:hover .dropdown-menu {
+    display: flex;
+}
+
+/* Dropdown Items */
+.dropdown-menu li {
+    width: 100%;
+    border-left: none;
+    /* Remove vertical line separator */
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    color: #fff;
+    /* White text */
+    padding: 8px 15px;
+    font-size: 11px;
+    display: block;
+    text-align: right;
+    white-space: nowrap;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
 /* Hero Banner Styles */
 .hero-banner {
     background-color: #1e40af;
