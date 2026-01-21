@@ -172,7 +172,7 @@ nav ul li a:hover {
     background-color: #1e40af;
     /* Deep blue similar to image */
     text-align: center;
-    padding: 40px 0;
+    padding: 10px 0;
     width: 100%;
     color: #fff;
     margin-top: 0;
@@ -181,15 +181,15 @@ nav ul li a:hover {
 }
 
 .hero-text-small {
-    font-size: 32px;
+    font-size: 100px;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 0;
     margin-top: 0;
     line-height: 1.2;
 }
 
 .hero-text-large {
-    font-size: 56px;
+    font-size: 120px;
     font-weight: 800;
     /* Extra bold */
     line-height: 1;
