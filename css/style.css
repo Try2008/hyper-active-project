@@ -115,6 +115,27 @@ nav ul li a:hover {
     color: #555;
 }
 
+/* Robust invisible bridge to prevent dropdown from closing */
+.dropdown-parent::after {
+    content: "";
+    position: absolute;
+    top: calc(100% - 10px);
+    /* Overlap to ensure no gap */
+    left: 0;
+    width: 100%;
+    height: 20px;
+    /* Generous height to catch mouse movement */
+    background: transparent;
+    z-index: 10;
+    display: none;
+    /* Hidden by default to prevent early triggering */
+}
+
+.dropdown-parent:hover::after {
+    display: block;
+    /* Only active when menu is already triggered */
+}
+
 .dropdown-parent:hover>a::after {
     color: #d32f2f;
 }
