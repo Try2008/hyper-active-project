@@ -2,13 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #fff;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     direction: rtl;
-    background-color: #f4f4f4;
+    background-color: #fff;
 }
 
 header {
