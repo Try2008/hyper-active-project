@@ -276,3 +276,249 @@ nav ul li a:hover {
 .chat-button i {
     font-size: 24px;
 }
+
+/* Content Wrapper */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Career Grid Section */
+.career-grid-container {
+    flex: 1;
+    max-width: 600px;
+    text-align: center;
+}
+
+.career-grid-container h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+.career-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    direction: ltr;
+    /* To match visual order in image if needed, or keeping rtl but adjust order */
+}
+
+/* Adjust grid for RTL to match image visual order if necessary. 
+   Image shows Cyber (Top Right in RTL? No, Image shows Cyber Top Right).
+   In RTL, first item is Right. So standard grid is fine.
+*/
+.career-grid {
+    direction: rtl;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.grid-item p {
+    font-size: 14px;
+    line-height: 1.2;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+.grid-item p span {
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+/* Icon Colors - Matching Image */
+.icon-blue {
+    background-color: #3b82f6;
+}
+
+/* QA - Bright Blue */
+.icon-dark-blue {
+    background-color: #3b5998;
+}
+
+/* Facebook - Navy */
+.icon-grey-cloud {
+    background-color: #9ca3af;
+}
+
+/* Cloud - Grey */
+.icon-green-shield {
+    background-color: #34d399;
+}
+
+/* Cyber - Green */
+.icon-dark-grey {
+    background-color: #4b5563;
+}
+
+/* Embedded - Dark Grey */
+.icon-grey-apple {
+    background-color: #9ca3af;
+}
+
+/* Apple - Grey */
+.icon-purple-code {
+    background-color: #a855f7;
+}
+
+/* Code - Purple */
+.icon-yellow-mouse {
+    background-color: #fcd34d;
+}
+
+/* UI/UX - Yellow */
+
+.icon-circle i {
+    color: white;
+    /* Default white icon */
+}
+
+
+/* Lead Form Section */
+.lead-form-container {
+    width: 350px;
+    background-color: #1a3b96;
+    /* Dark Blue */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.lead-form-container h3 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.lead-form-container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    text-align: right;
+    height: 45px;
+}
+
+.form-group label {
+    position: absolute;
+    right: 15px;
+    color: #333;
+    font-weight: 600;
+    pointer-events: none;
+    display: none;
+}
+
+/* Custom label look inside input */
+.form-group input {
+    padding-right: 10px;
+}
+
+.form-group input::placeholder {
+    color: #1a3b96;
+    font-weight: 700;
+}
+
+/* Checkbox */
+.form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: white;
+    font-size: 11px;
+    margin-top: 10px;
+    line-height: 1.2;
+}
+
+.form-checkbox input {
+    margin-top: 2px;
+}
+
+/* Links */
+.form-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.form-links a {
+    color: #ccc;
+    font-size: 10px;
+    text-decoration: underline;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #fef9c3;
+    /* Light beige/yellow */
+    color: #000;
+    border: 2px solid #5eead4;
+    /* Teal border like image */
+    font-size: 28px;
+    font-weight: 800;
+    padding: 5px 0;
+    margin-top: 15px;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.2s;
+}
+
+.submit-btn:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .content-wrapper {
+        flex-direction: column-reverse;
+        /* Stack Form below Grid, or above? Image has grid on R, Form on L. In Mobile, usually main content first. Let's try column-reverse to put Grid on top, Form on bottom? Or standard column. Let's stick to standard column (Left comes first). */
+        align-items: center;
+    }
+
+    .career-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
