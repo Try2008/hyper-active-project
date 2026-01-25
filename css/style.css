@@ -448,15 +448,19 @@ nav ul li a:hover {
 .form-group label {
     position: absolute;
     right: 15px;
-    color: #333;
-    font-weight: 600;
+    color: #1a3b96;
+    /* Match placeholder color */
+    font-weight: 700;
     pointer-events: none;
-    display: none;
+    display: block;
+    /* Make visible */
+    z-index: 10;
 }
 
 /* Custom label look inside input */
 .form-group input {
-    padding-right: 10px;
+    padding-right: 90px;
+    /* Space for the label */
 }
 
 .form-group input::placeholder {
