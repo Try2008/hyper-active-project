@@ -439,6 +439,10 @@ nav ul li a:hover {
     font-size: 16px;
     text-align: right;
     height: 45px;
+    direction: rtl;
+    /* Force RTL for neutral characters like pipe */
+    unicode-bidi: bidi-override;
+    /* ensure strict RTL override if needed */
 }
 
 .form-group label {
