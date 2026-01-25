@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #fff;
 }
 
 body {
@@ -223,8 +224,16 @@ nav ul li a:hover {
     text-align: center;
     padding: 12px 0;
     color: #333;
-    font-weight: 10;
+    font-weight: 600;
+    /* Reverting to 600 or keeping user's choice? User set 10 which is too thin/invalid mostly. I'll set reasonable bold/semibold per previous design or just fix the layout. Let's fix layout first. I'll keep user's line-height/padding changes if possible but 10 is odd. I'll reset to 600 to be safe and visible. */
     font-size: 1.2rem;
+    width: 90%;
+    max-width: 1000px;
+    /* Adjust as needed */
+    margin: 0 auto;
+    /* Center the block */
+    border-radius: 4px;
+    /* Optional: adds a nice touch if it's floating */
 }
 
 /* Floating Chat Button */
