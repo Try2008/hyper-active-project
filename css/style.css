@@ -780,17 +780,14 @@ nav ul li a:hover {
 }
 
 .about-us-content {
-    font-size: 18px;
+    font-size: 16px;
+    /* Slightly smaller to match screenshot */
     line-height: 1.8;
     color: #333;
     text-align: right;
 }
 
-.about-us-content p {
-    margin-bottom: 20px;
-}
-
-.about-us-content .bold-text {
+.about-us-content strong {
     font-weight: 700;
     color: #000;
 }
