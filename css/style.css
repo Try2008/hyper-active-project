@@ -216,3 +216,55 @@ nav ul li a:hover {
     line-height: 1;
     margin: 0;
 }
+
+.sub-hero-banner {
+    background-color: #eff7e6;
+    /* Light greenish beige */
+    text-align: center;
+    padding: 12px 0;
+    color: #333;
+    font-weight: 10;
+    font-size: 1.2rem;
+}
+
+/* Floating Chat Button */
+.floating-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.chat-button {
+    background-color: #0066ff;
+    /* Bright Blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 10px 20px 10px 45px;
+    /* Extra padding left for icon if needed, or right for English */
+    /* Since direction is RTL, we might need padding-right for the icon if it's first */
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #25D366;
+    /* Green border */
+    font-weight: 600;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+}
+
+.chat-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+}
+
+.chat-button i {
+    font-size: 24px;
+}
