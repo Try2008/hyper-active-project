@@ -1069,3 +1069,35 @@ nav ul li a:hover {
         gap: 30px;
     }
 }
+
+/* Update Question pointer */
+.question {
+    cursor: pointer;
+}
+
+/* Update arrow rotation */
+.question i {
+    transition: transform 0.4s ease;
+}
+
+.question.active i {
+    transform: rotate(180deg);
+}
+
+/* Update Answer visibility and transition */
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    line-height: 1.6;
+    font-weight: 400;
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+    padding: 0; /* Remove padding when closed to avoid taking space */
+}
+
+/* Open Answer state */
+.answer.open {
+    max-height: 500px; /* Large enough for content */
+    opacity: 1;
+    margin-top: 10px; /* Add margin only when open if needed, or keep in flow */
+}
