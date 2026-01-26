@@ -801,3 +801,174 @@ nav ul li a:hover {
         font-size: 16px;
     }
 }
+
+/* How It Works Section */
+.how-it-works-section {
+    width: 100%;
+    position: relative;
+    padding: 60px 0;
+    padding-bottom: 60px;
+    background-color: #f0fdf4;
+    /* Very light background to separate */
+}
+
+.how-it-works-section .section-title {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    direction: rtl;
+    /* Ensures Step 1 is Top Right */
+}
+
+.how-it-works-item {
+    padding: 60px 80px;
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.how-it-works-item h3 {
+    font-size: 24px;
+    font-weight: 400;
+    /* Lighter weight header as per image */
+    margin-bottom: 20px;
+}
+
+.how-it-works-item p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+/* Step 1: Top Right - Teal */
+.step-1 {
+    background-color: #2dd4bf;
+    /* Teal - approx #2dd4bf or #14b8a6 */
+    grid-column: 1;
+    /* Right in RTL */
+    grid-row: 1;
+}
+
+/* Step 2: Top Left - Light Blue */
+.step-2 {
+    background-color: #0ea5e9;
+    /* Sky Blue - approx #0ea5e9 or #0284c7 */
+    grid-column: 2;
+    /* Left in RTL */
+    grid-row: 1;
+}
+
+/* Step 3: Bottom Left - Bright Blue */
+.step-3 {
+    background-color: #2563eb;
+    /* Royal Blue */
+    grid-column: 2;
+    /* Left in RTL */
+    grid-row: 2;
+}
+
+/* Step 4: Bottom Right - Navy Blue */
+.step-4 {
+    background-color: #1e3a8a;
+    /* Dark Navy */
+    grid-column: 1;
+    /* Right in RTL */
+    grid-row: 2;
+}
+
+/* Arrow Indicators */
+/* Arrow Step 1 -> Step 2 (Pointing Left) */
+.step-1::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -29px;
+    transform: translateY(-50%);
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-right: 30px solid #2dd4bf;
+    /* Match bg color */
+    z-index: 10;
+}
+
+/* Arrow Step 2 -> Step 3 (Pointing Down) */
+.step-2::after {
+    content: '';
+    position: absolute;
+    bottom: -29px;
+    left: 15%;
+    /* Indented from left */
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 30px solid #0ea5e9;
+    /* Match bg color */
+    z-index: 10;
+}
+
+/* Arrow Step 3 -> Step 4 (Pointing Right) */
+.step-3::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -29px;
+    transform: translateY(-50%);
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 30px solid #2563eb;
+    /* Match bg color */
+    z-index: 10;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .how-it-works-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .how-it-works-item {
+        padding: 40px 20px;
+    }
+
+    /* Reset Grid Positions for mobile stack */
+    .step-1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .step-2 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .step-3 {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .step-4 {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    /* Hide arrows on mobile stack */
+    .step-1::after,
+    .step-2::after,
+    .step-3::after {
+        display: none;
+    }
+}
