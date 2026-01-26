@@ -1,26 +1,55 @@
+<!-- #REGION Document Setup -->
+<!-- הגדרת סוג המסמך כ-HTML5 -->
 <!DOCTYPE html>
+<!-- תחילת מסמך ה-HTML, הגדרת שפה לאנגלית -->
 <html lang="en">
 
+<!-- תחילת ה-Head, מכיל מטא-דאטה וקישורים -->
+
 <head>
+    <!-- הגדרת קידוד תווים ל-UTF-8 לתמיכה בעברית -->
     <meta charset="UTF-8">
+    <!-- הגדרת התצוגה למובייל (רספונסיביות) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- קישור לקובץ העיצוב (CSS) -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- קישור לספריית האייקונים Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- הגדרת האייקון שמופיע בלשונית הדפדפן (Favicon) -->
     <link rel="icon" href="images/logo.png" type="image/png">
+    <!-- כותרת הדף שמופיעה בלשונית הדפדפן -->
     <title>HyperActive</title>
+    <!-- סיום ה-Head -->
 </head>
+<!-- #ENDREGION Document Setup -->
+
+<!-- #REGION Body Start -->
+<!-- תחילת גוף הדף, כיוון טקסט מימין לשמאל -->
 
 <body dir="rtl">
+    <!-- #ENDREGION Body Start -->
+
+    <!-- #REGION Header -->
+    <!-- תחילת הכותרת העליונה (Header) -->
     <header>
+        <!-- מיכל (Container) לכותרת, לסידור האלמנטים -->
         <div class="header-container">
+            <!-- קישור ללוגו שמוביל לדף הבית -->
             <a href="#" class="container">
+                <!-- תמונת הלוגו -->
                 <img src="images/logo.png" alt="HyperActive" class="logo">
+                <!-- טקסט השורה התחתונה מתחת ללוגו -->
                 <p class="tagline">בית הספר להיי-טק הטוב בישראל</p>
             </a>
+            <!-- תפריט ניווט למסכים גדולים (Desktop) -->
             <nav class="desktop-nav">
+                <!-- רשימה לא מסודרת של קישורי הניווט -->
                 <ul>
+                    <!-- פריט תפריט עם תפריט נפתח (Drop-down) -->
                     <li class="dropdown-parent"><a href="#">קריירות</a>
+                        <!-- התפריט הנפתח עצמו -->
                         <ul class="dropdown-menu">
+                            <!-- אפשרויות קריירה שונות בתפריט הנפתח -->
                             <li><a href="#">סייבר ואבטחת מידע | ethical hacking</a></li>
                             <li><a href="#">ניהול רשתות ומחשוב | system administration</a></li>
                             <li><a href="#">שיווק דיגיטלי | seo/social/sales&marketing</a></li>
@@ -31,6 +60,7 @@
                             <li><a href="#">פיתוח אפליקציות מובייל | ios/android</a></li>
                         </ul>
                     </li>
+                    <!-- קישורי ניווט נוספים בתפריט הראשי -->
                     <li><a href="#">למה ללמוד אצלינו?</a></li>
                     <li><a href="#">כאן תמצאו את הבוגרים שלנו</a></li>
                     <li><a href="#">קצת עלינו</a></li>
@@ -39,18 +69,26 @@
                     <li><a href="#">שירות לציבור</a></li>
                 </ul>
             </nav>
+            <!-- כפתור ההמבורגר לתפריט מובייל -->
             <div class="hamburger">
+                <!-- קו ראשון של ההמבורגר -->
                 <span class="bar"></span>
+                <!-- קו שני של ההמבורגר -->
                 <span class="bar"></span>
+                <!-- קו שלישי של ההמבורגר -->
                 <span class="bar"></span>
             </div>
 
-            <!-- Mobile Menu Overlay -->
+            <!-- תפריט מובייל (נפתח בלחיצה על ההמבורגר) -->
             <div class="mobile-menu">
+                <!-- רשימת הקישורים במובייל -->
                 <ul>
                     <li><a href="#">בית</a></li>
+                    <!-- פריט תפריט נפתח במובייל -->
                     <li class="mobile-dropdown-parent">
+                        <!-- הכותרת של התפריט הנפתח עם אייקון חץ -->
                         <a href="#">קריירות <i class="fas fa-chevron-down"></i></a>
+                        <!-- רשימת האפשרויות בתפריט הנפתח במובייל -->
                         <ul class="mobile-dropdown-menu">
                             <li><a href="#">סייבר ואבטחת מידע</a></li>
                             <li><a href="#">ניהול רשתות ומחשוב</a></li>
@@ -62,6 +100,7 @@
                             <li><a href="#">פיתוח אפליקציות</a></li>
                         </ul>
                     </li>
+                    <!-- שאר הקישורים בתפריט המובייל -->
                     <li><a href="#">למה ללמוד אצלינו?</a></li>
                     <li><a href="#">כאן תמצאו את הבוגרים שלנו</a></li>
                     <li><a href="#">קצת עלינו</a></li>
@@ -72,90 +111,130 @@
             </div>
         </div>
     </header>
+    <!-- #ENDREGION Header -->
 
+    <!-- #REGION Hero Banner -->
+    <!-- באנר ראשי (Hero) בצבע כחול -->
     <div class="hero-banner">
+        <!-- טקסט קטן בבאנר -->
         <p class="hero-text-small">לא עבדת?</p>
+        <!-- טקסט גדול ומודגש בבאנר -->
         <p class="hero-text-large">לא שילמת!</p>
     </div>
 
+    <!-- באנר משני (Sub-hero) עם רקע בהיר -->
     <div class="sub-hero-banner">
+        <!-- טקסט הסבר בבאנר המשני -->
         <p>אבחון, יעוץ ומיון מקצועי בשווי 1000 ש"ח על חשבוננו</p>
     </div>
+    <!-- #ENDREGION Hero Banner -->
 
+    <!-- #REGION Main Content Area -->
+    <!-- עוטף את התוכן המרכזי (גריד קריירות וטופס) -->
     <div class="content-wrapper">
-        <!-- Career Grid (Right Side) -->
+        <!-- #REGION Career Grid -->
+        <!-- צד ימין: גריד של כרטיסי קריירה -->
         <div class="career-grid-container">
+            <!-- כותרת הגריד -->
             <h2>מה הקריירה שלך בהיי-טק?</h2>
+            <!-- המיכל של הגריד עצמו -->
             <div class="career-grid">
+                <!-- פריט גריד בודד: בדיקת תוכנה -->
                 <div class="grid-item">
+                    <!-- עיגול האייקון עם תמונה -->
                     <div class="icon-circle"><img src="images/icon-qa.png" alt="QA"></div>
+                    <!-- טקסט תחת האייקון -->
                     <p>בדיקת תוכנה<br><span>qa & automation</span></p>
                 </div>
+                <!-- פריט גריד בודד: שיווק דיגיטלי -->
                 <div class="grid-item">
                     <div class="icon-circle"><img src="images/icon-marketing.png" alt="Marketing"></div>
                     <p>שיווק דיגיטלי<br><span>seo/social/sales&marketing</span></p>
                 </div>
+                <!-- פריט גריד בודד: ניהול רשתות -->
                 <div class="grid-item">
                     <div class="icon-circle"><img src="images/icon-network.png" alt="Networks"></div>
                     <p>ניהול רשתות ומחשוב<br><span>system administration</span></p>
                 </div>
+                <!-- פריט גריד בודד: סייבר -->
                 <div class="grid-item">
                     <div class="icon-circle"><img src="images/icon-cyber.png" alt="Cyber"></div>
                     <p>סייבר ואבטחת מידע<br><span>ethical hacking</span></p>
                 </div>
+                <!-- פריט גריד בודד: פיתוח מערכות -->
                 <div class="grid-item">
                     <div class="icon-circle"><img src="images/icon-embedded.png" alt="Embedded"></div>
                     <p>פיתוח מערכות<br>משובצות מחשב<br><span>embedded</span></p>
                 </div>
+                <!-- פריט גריד בודד: פיתוח אפליקציות -->
                 <div class="grid-item">
                     <div class="icon-circle"><img src="images/icon-mobile.png" alt="Mobile"></div>
                     <p>פיתוח אפליקציות<br>מובייל<br><span>ios/android</span></p>
                 </div>
+                <!-- פריט גריד בודד: פיתוח תוכנה -->
                 <div class="grid-item">
                     <div class="icon-circle"><img src="images/icon-fullstack.png" alt="Full Stack"></div>
                     <p>פיתוח תוכנה dot<br>net/java/php | full<br>stack</p>
                 </div>
+                <!-- פריט גריד בודד: עיצוב גרפי -->
                 <div class="grid-item">
                     <div class="icon-circle"><img src="images/icon-uiux.png" alt="UI/UX"></div>
                     <p>עיצוב גרפי | ui/ux</p>
                 </div>
             </div>
         </div>
+        <!-- #ENDREGION Career Grid -->
 
-        <!-- Lead Form (Left Side) -->
+        <!-- #REGION Main Lead Form -->
+        <!-- צד שמאל: טופס לידים ראשי -->
         <div class="lead-form-container">
+            <!-- כותרת הטופס -->
             <h3>רוצה לשמוע עוד?</h3>
+            <!-- טופס שליחת פרטים -->
             <form>
+                <!-- קבוצת שדה קלט: שם מלא -->
                 <div class="form-group">
                     <label for="name">שם מלא |</label>
                     <input type="text" id="name" name="name">
                 </div>
+                <!-- קבוצת שדה קלט: טלפון -->
                 <div class="form-group">
                     <label for="phone">טלפון |</label>
                     <input type="tel" id="phone" name="phone">
                 </div>
+                <!-- קבוצת שדה קלט: אימייל -->
                 <div class="form-group">
                     <label for="email">אי-מייל |</label>
                     <input type="email" id="email" name="email">
                 </div>
+                <!-- תיבת סימון (Checkbox) לאישור תקנון -->
                 <div class="form-checkbox">
                     <input type="checkbox" id="terms" name="terms" checked>
                     <label for="terms">אני מאשר קבלת עדכונים ומבצעים מהייפראקטיב בכפוף לתקנון.</label>
                 </div>
+                <!-- קישורים למדיניות והצהרת נגישות -->
                 <div class="form-links">
                     <a href="#">מדיניות פרטיות משתמשים</a>
                     <a href="#">הצהרת נגישות</a>
                 </div>
+                <!-- כפתור שליחה עם עיצוב מוטבע (Inline Style) -->
                 <button type="submit" class="submit-btn"
                     style="background-color: #fef9c3; color: #000; font-weight: 800; border: 2px solid #5eead4;">דברו
                     איתי!</button>
             </form>
         </div>
+        <!-- #ENDREGION Main Lead Form -->
     </div>
+    <!-- #ENDREGION Main Content Area -->
 
+    <!-- #REGION Why Us Section -->
+    <!-- אזור "למה ללמוד אצלנו" -->
     <div class="why-us-section">
+        <!-- מיכל פנימי למרכוז התוכן -->
         <div class="why-us-container-inner">
+            <!-- כותרת האזור -->
             <h2 class="why-us-title">למה ללמוד אצלנו?</h2>
+            <!-- פסקת פתיחה והסבר -->
             <div class="why-us-intro">
                 <p>יש הרבה סיבות מדוע ללמוד אצלנו ומדוע אנחנו בית הספר להיי-טק הטוב בישראל. אבל בסופו של דבר הכל נובע
                     מסיבה
@@ -166,9 +245,11 @@
                 <p class="intro-blue">אנחנו בית הספר היחיד שמרוויח כסף רק ואך ורק אם אכן תתקבלו לעבודה.</p>
             </div>
 
+            <!-- מיכל להשוואה בין השוק לבינינו -->
             <div class="comparison-container">
-                <!-- Market Column (Right in Image) -->
+                <!-- עמודה ימנית: המצב בשוק -->
                 <div class="comparison-column market-column">
+                    <!-- כותרת העמודה עם טקסט מודגש ותת-כותרת -->
                     <h3>בשאר השוק - <span class="subtitle">תגיעו להתעניין בלימודים ותקבלו מאנשי המכירות יחס נפלא, תשמעו
                             הבטחות מהממות, ויופעלו עליכם <span class="underline">תרגילים שיווקיים מכל הבא ליד כדוגמת
                                 "התחייבות לעבודה" חסרת כל משמעות</span>, ירשמו אתכם לקורס ויגבו מכם מראש שכר לימוד מלא.
@@ -176,6 +257,7 @@
                             זה הגדול בית הספר עשה את שלו - תצליחו, לא תצליחו, תמצאו עבודה, לא תמצאו עבודה זה כבר פחות
                             משנה.
                             בהתאם ברוב בתי הספר, למרות מאמצים וכוונות טובות בדרך כלל, מתגלות הבעיות הבאות:</span></h3>
+                    <!-- רשימה ממוספרת של בעיות בשוק -->
                     <ol>
                         <li>לא קיים תהליך אבחון ומיון אמיתי - "יועצי לימודים" הינם בעצם אנשי מכירות, המתוגמלים על פי
                             כמות
@@ -189,6 +271,7 @@
                             ההוראה נפגעת בהתאם.</li>
                         <li>בסיום ההכשרה גוף ההשמה המצומצם יוצא ידי חובה בפעילות מועטה, מול הבוגרים.</li>
                     </ol>
+                    <!-- סיכום המצב בשוק -->
                     <div class="market-summary">
                         <p>כתוצאה מכך, ברוב בתי הספר, בדרך כלל כמחצית מהתלמידים נושרים מהקורס עד שהקורס מסתיים, וכמות
                             הבוגרים שמצליחים להשתלב בתעשיית ההיי-טק במקצוע אותו למדו בקורס נמוכה מאוד. לצערנו, בעידן
@@ -196,11 +279,14 @@
                     </div>
                 </div>
 
-                <!-- Us Column (Left in Image) -->
+                <!-- עמודה שמאלית: המצב אצלנו -->
                 <div class="comparison-column us-column">
+                    <!-- כותרת העמודה שלנו -->
                     <h3>אצלנו לעומת זאת הכל הפוך - <span class="subtitle">אם לא תתקבלו לעבודה בתחום אותו למדתם אצלנו לא
                             תשלמו בכלל שכר לימוד!</span></h3>
+                    <!-- תת כותרת -->
                     <p class="us-subtext">בהתאם הדברים מתנהלים בצורה הבאה:</p>
+                    <!-- רשימה ממוספרת של היתרונות שלנו -->
                     <ol>
                         <li>כשתפנו אלינו תעברו תהליך אבחון, יעוץ ומיון מקצועי אמיתי. לצערנו רוב המועמדים מקבלים תשובה
                             ישירה
@@ -217,19 +303,29 @@
             </div>
         </div>
     </div>
+    <!-- #ENDREGION Why Us Section -->
 
-    <!-- Graduates Section -->
+    <!-- #REGION Graduates Section -->
+    <!-- אזור הבוגרים שלנו -->
     <div class="graduates-section">
+        <!-- כותרת אזור הבוגרים -->
         <h2 class="graduates-title">כאן תמצאו את הבוגרים</h2>
+        <!-- מיכל ללוגואים של החברות בהן עובדים הבוגרים -->
         <div class="graduates-logos-container">
+            <!-- תמונה המכילה את לוגואי החברות -->
             <img src="images/graduates-logos.png" alt="Graduates Companies" class="graduates-image">
         </div>
     </div>
+    <!-- #ENDREGION Graduates Section -->
 
-    <!-- About Us Section -->
+    <!-- #REGION About Us Section -->
+    <!-- אזור "קצת עלינו" -->
     <div class="about-us-section" id="about-us">
+        <!-- מיכל התוכן של אודות -->
         <div class="about-us-container">
+            <!-- כותרת האזור -->
             <h2 class="about-us-title">קצת עלינו</h2>
+            <!-- תוכן הטקסט של אודות -->
             <div class="about-us-content">
                 <p>הייפראקטיב הוקמה ב- 2004 על ידי צוות בראשות טל שחר, יזם היי-טק ותיק.</p>
                 <p>צוות ההדרכה בחברה הינו מהוותיקים והמנוסים בישראל. חלקנו הקמנו בעבר בתי ספר להיי-טק אחרים, חלקנו עבדנו
@@ -254,12 +350,16 @@
             </div>
         </div>
     </div>
+    <!-- #ENDREGION About Us Section -->
 
-    <!-- How It Works Section -->
+    <!-- #REGION How It Works Section -->
+    <!-- אזור "איך זה עובד" -->
     <div class="how-it-works-section" id="how-it-works">
+        <!-- כותרת האזור -->
         <h2 class="section-title">איך זה עובד</h2>
+        <!-- גריד של שלבי הפעולה -->
         <div class="how-it-works-grid">
-            <!-- Step 1: Diagnosis (Top Right) -->
+            <!-- שלב 1: אבחון -->
             <div class="how-it-works-item step-1">
                 <h3>אבחון, יעוץ ומיון</h3>
                 <p>לאורך השנים גיבשנו תהליך מדויק לבדיקת ההתאמה לתחומי העיסוק השונים בענף ההיי-טק.</p>
@@ -273,7 +373,7 @@
                     ומתחייבים לחזור לכל מועמד עם תשובה.</p>
             </div>
 
-            <!-- Step 2: Training (Top Left) -->
+            <!-- שלב 2: הכשרה -->
             <div class="how-it-works-item step-2">
                 <h3>מסלול הכשרה</h3>
                 <p>למועמדים שיעברו בהצלחה את תהליכי האבחון ימונה מנהל תוכנית אישי.</p>
@@ -287,7 +387,7 @@
                     מיוחדות בקבוצות קטנות.</p>
             </div>
 
-            <!-- Step 3: Placement (Bottom Left) -->
+            <!-- שלב 3: שיבוץ -->
             <div class="how-it-works-item step-3">
                 <h3>תהליך השיבוץ</h3>
                 <p>עם סיום ההכשרה, תעברו לטיפול מחלקת ההשמה - תעברו סדנת הכנה ואימון מתקדם לקראת ראיונות עבודה, תעברו
@@ -297,7 +397,7 @@
                     על הקורס אותו עברתם...</p>
             </div>
 
-            <!-- Step 4: New Career (Bottom Right) -->
+            <!-- שלב 4: קריירה -->
             <div class="how-it-works-item step-4">
                 <h3>קריירה חדשה</h3>
                 <p>עשיתם את זה, נכנסתם לענף ההיי-טק. אתם עובדים באחת מחברות ההיי-טק המובילות בישראל. אנחנו עדיין עומדים
@@ -305,15 +405,19 @@
                     גבוהים יותר לאורך הקריירה.</p>
             </div>
         </div>
+        <!-- #ENDREGION How It Works Section -->
 
 
-        <!-- Questions Answers Section -->
+        <!-- #REGION Questions & Answers -->
+        <!-- אזור שאלות ותשובות -->
         <div id="questions-answers-section" class="questions-answers-section">
             <div class="section-container">
+                <!-- כותרת האזור -->
                 <h2>שאלות שכנראה תשאלו</h2>
                 <div class="section-inner-container">
-                    <!-- Right Column (Desktop) -->
+                    <!-- עמודה ימנית (במסכים גדולים) -->
                     <div class="questions-column">
+                        <!-- שאלה 1 -->
                         <div class="question-answer-container">
                             <div class="question">איך אני יכול לדעת איזה מקצוע בהיי-טק מתאים לי?<i
                                     class="fas fa-arrow-circle-up" aria-hidden="true"></i></div>
@@ -321,6 +425,7 @@
                                 שלנו ללא כל עלות וללא כל מחויבות.
                                 נחזיק לך אצבעות שתמצא מתאים לאחד המקצועות בענף ההיי-טק!</div>
                         </div>
+                        <!-- שאלה 2 -->
                         <div class="question-answer-container">
                             <div class="question">סיימתי קורס בבית ספר אחר ולא מצאתי עבודה, מה אני יכול לעשות?<i
                                     class="fas fa-arrow-circle-up" aria-hidden="true"></i></div>
@@ -349,6 +454,7 @@
                                 לעבודה…
                             </div>
                         </div>
+                        <!-- שאלה 3 -->
                         <div class="question-answer-container">
                             <div class="question">יש לי תואר אקדמי במדעי המחשב ולא מצאתי עבודה, מה אני יכול לעשות?<i
                                     class="fas fa-arrow-circle-up" aria-hidden="true"></i></div>
@@ -377,6 +483,7 @@
                                 אותך לענף. כאמור, על הכשרות אצלנו לא משלמים שקל אם לא מתקבלים לעבודה…
                             </div>
                         </div>
+                        <!-- שאלה 4 -->
                         <div class="question-answer-container">
                             <div class="question">סיימתי קורס בבית ספר אחר ולא מצאתי עבודה, אני שוקל ללמוד תואר במדעי
                                 המחשב,
@@ -389,6 +496,7 @@
                                 תוכנה במקרים רבים לא ישנה את המצב.<br>
                                 פנה אלינו להליך האבחון, היעוץ והמיון המקצועי שלנו ללא כל עלות וללא כל מחויבות.</div>
                         </div>
+                        <!-- שאלה 5 -->
                         <div class="question-answer-container">
                             <div class="question">אני מעונין להיות פרי לנסר, האם ניתן עדיין ללמוד אצלכם?<i
                                     class="fas fa-arrow-circle-up" aria-hidden="true"></i></div>
@@ -398,6 +506,7 @@
                                 התשלום על הקורס המבוקש.
                             </div>
                         </div>
+                        <!-- שאלה 6 -->
                         <div class="question-answer-container">
                             <div class="question">כבר יש לי מקום עבודה, האם ניתן עדיין ללמוד אצלכם?<i
                                     class="fas fa-arrow-circle-up" aria-hidden="true"></i></div>
@@ -407,6 +516,7 @@
                                 התשלום על הקורס המבוקש.
                             </div>
                         </div>
+                        <!-- שאלה 7 -->
                         <div class="question-answer-container">
                             <div class="question">איך מגישים מועמדות?<i class="fas fa-arrow-circle-up"
                                     aria-hidden="true"></i></div>
@@ -416,14 +526,16 @@
                         </div>
                     </div>
 
-                    <!-- Left Column (Desktop) -->
+                    <!-- עמודה שמאלית (במסכים גדולים) -->
                     <div class="questions-column">
+                        <!-- שאלה 8 -->
                         <div class="question-answer-container">
                             <div class="question">מה זאת אומרת לא עבדת? לא שילמת!<i class="fas fa-arrow-circle-up"
                                     aria-hidden="true"></i></div>
                             <div class="answer">מאוד פשוט, ללא אותיות קטנות, רק כשתתקבל לעבודה תשלם על הקורס שלמדת.
                                 לא התקבלת לעבודה? לא שילמת לנו שקל.</div>
                         </div>
+                        <!-- שאלה 9 -->
                         <div class="question-answer-container">
                             <div class="question">אני רוצה ללמוד אבל אין לי כסף, מה לעשות?<i
                                     class="fas fa-arrow-circle-up" aria-hidden="true"></i></div>
@@ -431,17 +543,20 @@
                                 הלוואה. שום דבר
                                 תשלמו על הלימודים רק אחרי שתתחילו לעבוד וגם אז התשלום יתבצע בתשלום חודשי קטן קבוע.</div>
                         </div>
+                        <!-- שאלה 10 -->
                         <div class="question-answer-container">
                             <div class="question">איפה יש לכם סניפים/ איפה אתם מלמדים?<i class="fas fa-arrow-circle-up"
                                     aria-hidden="true"></i></div>
                             <div class="answer">בתקופת הקורונה אנחנו מלמדים בכל מקום בארץ on line באמצעות שיטות הדרכה
                                 מתקדמות.</div>
                         </div>
+                        <!-- שאלה 11 -->
                         <div class="question-answer-container">
                             <div class="question">מתי מתקיימים מיונים לקורסים השונים?<i class="fas fa-arrow-circle-up"
                                     aria-hidden="true"></i></div>
                             <div class="answer">מיונים מתקיימים כל הזמן באופן שוטף.</div>
                         </div>
+                        <!-- שאלה 12 -->
                         <div class="question-answer-container">
                             <div class="question">מתי מתחילים קורסים?<i class="fas fa-arrow-circle-up"
                                     aria-hidden="true"></i></div>
@@ -449,6 +564,7 @@
                                 תהליכי המיון בהצלחה, לא צריכים להמתין יותר מ-3-4
                                 שבועות לתחילת ההכשרה. </div>
                         </div>
+                        <!-- שאלה 13 -->
                         <div class="question-answer-container">
                             <div class="question">האם ניתן לעבוד תוך כדי ההכשרות?<i class="fas fa-arrow-circle-up"
                                     aria-hidden="true"></i></div>
@@ -458,17 +574,20 @@
                 </div>
             </div>
         </div>
+        <!-- #ENDREGION Questions & Answers -->
 
 
 
-
-        <!-- Service to Public Section -->
+        <!-- #REGION Public Service Section -->
+        <!-- אזור שירות לציבור -->
         <div id="public-service-section" class="questions-answers-section public-service-section">
             <div class="section-container">
+                <!-- כותרת האזור -->
                 <h2>שירות לציבור</h2>
                 <div class="section-inner-container">
-                    <!-- Right Column (Desktop) -->
+                    <!-- עמודה ימנית (במסכים גדולים) -->
                     <div class="questions-column">
+                        <!-- פריט שירות 1 -->
                         <div class="question-answer-container">
                             <div class="question">לא התקבלתי אצלכם ללימודים בתחום שעניין אותי, מה לעשות?<i
                                     class="fas fa-arrow-circle-up" aria-hidden="true"></i></div>
@@ -484,6 +603,7 @@
                                 משוכנעים ביכולת שלכם אל תתייאשו וחפשו נתיב לימודי במקום אחר.
                             </div>
                         </div>
+                        <!-- פריט שירות 2 -->
                         <div class="question-answer-container">
                             <div class="question">למרות שלא התקבלתי אצלכם, אני משוכנע ביכולת שלי ורוצה לחפש קורס במקום
                                 לימודי אחר. למה צריך לשים לב ומה צריך להיזהר?<i class="fas fa-arrow-circle-up"
@@ -496,6 +616,7 @@
                                 ולהזהר מטענות אנשי מכירות לגבי "התחייבות לעבודה", "מלגת לימודים" ו"אחוזי השמה".
                             </div>
                         </div>
+                        <!-- פריט שירות 3 -->
                         <div class="question-answer-container">
                             <div class="question">כמה מרוויחים בענף ההיי-טק?<i class="fas fa-arrow-circle-up"
                                     aria-hidden="true"></i></div>
@@ -526,8 +647,9 @@
                         </div>
                     </div>
 
-                    <!-- Left Column (Desktop) -->
+                    <!-- עמודה שמאלית (במסכים גדולים) -->
                     <div class="questions-column">
+                        <!-- פריט שירות 4 -->
                         <div class="question-answer-container">
                             <div class="question">בכל מיני בתי ספר הבטיחו לי "התחייבות לעבודה" ב"חוזה חתום", זה אמיתי?<i
                                     class="fas fa-arrow-circle-up" aria-hidden="true"></i></div>
@@ -556,6 +678,7 @@
                                 להשוות בין בתי הספר תוך התעלמות מההתחייבות המדומה.
                             </div>
                         </div>
+                        <!-- פריט שירות 5 -->
                         <div class="question-answer-container">
                             <div class="question">בכל מיני בתי ספר הבטיחו לי מלגה, זה אמיתי?<i
                                     class="fas fa-arrow-circle-up" aria-hidden="true"></i></div>
@@ -571,6 +694,7 @@
                                 האמיתי באמצעות "מלגה".
                             </div>
                         </div>
+                        <!-- פריט שירות 6 -->
                         <div class="question-answer-container">
                             <div class="question">בית ספר/מכללה אקדמית מסויימת טוען שיש לו אחוז השמה מסויים של הבוגרים
                                 בענף.
@@ -586,40 +710,52 @@
                 </div>
             </div>
         </div>
+        <!-- #ENDREGION Public Service Section -->
 
+        <!-- #REGION Floating Chat -->
+        <!-- כפתור צ'אט צף שנגלל עם הדף -->
         <div class="floating-chat">
             <a href="#" class="chat-button">
                 <i class="fab fa-whatsapp"></i>
                 <span>היי! אנחנו פה, יש לך שאלה?</span>
             </a>
         </div>
+        <!-- #ENDREGION Floating Chat -->
 
-        <!-- Contact Strip Section -->
+        <!-- #REGION Contact Strip Section -->
+        <!-- סטריפ צור קשר תחתון -->
         <div class="contact-strip-section" id="contact-strip">
             <div class="contact-strip-container">
+                <!-- כותרת הסטריפ -->
                 <h2 class="contact-title">צרו קשר לכל שאלה או לקביעת פגישת ייעוץ (מלאו פרטים ונחזור אליכם בהקדם)</h2>
+                <!-- טופס יצירת קשר בסטריפ -->
                 <form class="contact-strip-form">
                     <div class="form-row">
-                        <!-- Right to Left Order: Name, Phone, Email, Button -->
+                        <!-- סדר אלמנטים מימין לשמאל: שם, טלפון, אימייל, כפתור -->
 
+                        <!-- קבוצת קלט: שם מלא -->
                         <div class="strip-input-group">
                             <label for="footer-name">שם מלא |</label>
                             <input type="text" id="footer-name" name="name">
                         </div>
 
+                        <!-- קבוצת קלט: טלפון -->
                         <div class="strip-input-group">
                             <label for="footer-phone">טלפון |</label>
                             <input type="tel" id="footer-phone" name="phone">
                         </div>
 
+                        <!-- קבוצת קלט: אימייל -->
                         <div class="strip-input-group">
                             <label for="footer-email">אי-מייל |</label>
                             <input type="email" id="footer-email" name="email">
                         </div>
 
+                        <!-- כפתור שליחה -->
                         <button type="submit" class="strip-submit-btn">דברו איתי!</button>
                     </div>
 
+                    <!-- שורה תחתונה: אישור תקנון וקישורים -->
                     <div class="form-footer-row">
                         <div class="checkbox-wrapper">
                             <input type="checkbox" id="footer-terms" checked>
@@ -633,14 +769,19 @@
                 </form>
             </div>
         </div>
+        <!-- #ENDREGION Contact Strip Section -->
 
 
-        <!-- Popup Banner -->
+        <!-- #REGION Popup Banner -->
+        <!-- באנר קופץ (Popup) -->
         <div id="popup-overlay" class="popup-overlay">
             <div class="popup-container">
+                <!-- כפתור סגירה (X) -->
                 <button id="close-popup" class="close-popup-btn">&times;</button>
                 <div class="popup-content">
+                    <!-- כותרת הפופאפ -->
                     <h2>מעוניינים לקבל ייעוץ חינם לגבי לימודי הייטק? השאירו פרטים!</h2>
+                    <!-- טופס בפופאפ -->
                     <form>
                         <div class="popup-form-group">
                             <input type="text" id="popup-name" name="name" placeholder="שם מלא">
@@ -660,17 +801,27 @@
                 </div>
             </div>
         </div>
+        <!-- #ENDREGION Popup Banner -->
 
+        <!-- #REGION Mobile Bottom Navigation -->
+        <!-- תפריט ניווט תחתון למובייל -->
         <div class="mobile-bottom-nav">
+            <!-- כפתור וואטסאפ -->
             <a href="#" class="mobile-nav-btn whatsapp-btn">
                 <i class="fab fa-whatsapp"></i> וואטסאפ
             </a>
+            <!-- כפתור לפרטים הנוספים -->
             <a href="#contact-strip" class="mobile-nav-btn details-btn">
                 <i class="fas fa-hand-point-up"></i> לפרטים
             </a>
         </div>
+        <!-- #ENDREGION Mobile Bottom Navigation -->
 
+        <!-- שילוב קובץ ה-JavaScript בסוף ה-Body לטעינה מהירה יותר -->
         <script src="js/main.js"></script>
+        <!-- סיום גוף הדף -->
 </body>
+
+<!-- סיום מסמך ה-HTML -->
 
 </html>

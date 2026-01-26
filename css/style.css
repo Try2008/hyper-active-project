@@ -1,658 +1,1046 @@
+/* #REGION Global & Reset */
+/* בחירה של כל האלמנטים בדף */
 * {
     margin: 0;
+    /* איפוס שוליים חיצוניים */
     padding: 0;
+    /* איפוס שוליים פנימיים */
     box-sizing: border-box;
+    /* חישוב הגודל כולל את המסגרת והריפוד */
 }
 
+/* הגדרות בסיסיות לגוף הדף */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* הגדרת פונט ברירת מחדל */
     direction: rtl;
+    /* כיוון טקסט מימין לשמאל */
     background-color: #fff;
+    /* צבע רקע לבן */
 }
 
+/* #ENDREGION Global & Reset */
+
+/* #REGION Header */
+/* עיצוב הכותרת העליונה */
 header {
     background-color: #fff;
+    /* רקע לבן */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* צל עדין בתחתית */
 }
 
+/* מיכל הכותרת העליונה */
 .header-container {
     max-width: 1200px;
+    /* רוחב מקסימלי */
     margin: 0 auto;
+    /* מרכוז המיכל */
     padding: 10px 20px;
+    /* ריפוד פנימי */
     display: flex;
+    /* תצוגת פלקס לסידור האלמנטים */
     align-items: center;
+    /* יישור אנכי למרכז */
     justify-content: center;
-    /* Center everything */
+    /* יישור אופקי למרכז */
+    /* מרכז את הכל */
     gap: 1px;
-    /* Bring logo and nav closer ("not far") */
+    /* מרווח קטן בין האלמנטים */
+    /* מקרב את הלוגו והתפריט */
 }
 
-/* Brand / Logo Styles */
+/* #REGION Brand / Logo */
+/* הגדרות המיכל של הלוגו והסלוגן */
 .container {
     display: flex;
+    /* תצוגת פלקס */
     flex-direction: column;
+    /* סידור אנכי (עמודה) */
     align-items: center;
+    /* מרכוז אופקי */
     /* מרכז את הטקסט והתמונה אופקית */
     text-decoration: none;
+    /* ביטול קו תחתי */
     width: fit-content;
+    /* רוחב בהתאם לתוכן */
     position: relative;
+    /* מיקום יחסי */
     /* עוזר במיקום */
 }
 
+/* עיצוב תמונת הלוגו */
 .logo {
     display: block;
+    /* תצוגת בלוק */
     height: 100px;
+    /* גובה קבוע */
     width: auto;
+    /* רוחב אוטומטי לשמירה על יחס */
     margin: 0 auto;
+    /* מרכוז */
     /* ביטלתי את המרווח השלילי כאן כדי לשלוט בזה דרך הטקסט */
     margin-bottom: 0;
+    /* ביטול שוליים תחתונים */
 
     /* וודא שהתמונה נמצאת מאחור אם יש חפיפה */
     position: relative;
+    /* מיקום יחסי */
     z-index: 1;
+    /* סדר תצוגה נמוך */
 }
 
+/* עיצוב הסלוגן מתחת ללוגו */
 .tagline {
     font-family: 'Segoe UI', Arial, sans-serif;
+    /* פונט */
     font-size: 10px;
+    /* גודל פונט קטן */
     font-weight: bold;
+    /* עובי פונט מודגש */
     color: #A07040;
+    /* צבע חום/זהב */
 
     margin-top: -15%;
-
+    /* מרווח עליון שלילי להצמדה ללוגו */
 
     position: relative;
+    /* מיקום יחסי */
     z-index: 10;
+    /* סדר תצוגה גבוה (מעל הלוגו) */
     white-space: nowrap;
+    /* מניעת שבירת שורות */
     line-height: 1;
+    /* גובה שורה */
 }
 
+/* #ENDREGION Brand / Logo */
 
-
+/* #REGION Navigation */
+/* עיצוב רשימת הניווט */
 nav ul {
     list-style: none;
+    /* ביטול נקודות הרשימה */
     display: flex;
+    /* תצוגת פלקס */
     align-items: center;
+    /* יישור אנכי למרכז */
     margin-top: 10px;
-    /* Push nav down to align with visual center of logo+tagline */
+    /* מרווח עליון */
+    /* דוחף את הניווט למטה ליישור ויזואלי */
 }
 
+/* עיצוב פריטי הרשימה */
 nav ul li {
     padding: 0 8px;
-    /* Reduced padding between links */
+    /* ריפוד צדדי */
+    /* הפחתת הריפוד בין הקישורים */
     border-left: 1px solid #ccc;
+    /* קו הפרדה שמאלי אפור */
     line-height: 1;
+    /* גובה שורה */
 }
 
+/* ביטול הגבול לפריט האחרון */
 nav ul li:last-child {
     border-left: none;
+    /* ללא גבול שמאלי */
 }
 
+/* עיצוב הקישורים בתפריט */
 nav ul li a {
     text-decoration: none;
+    /* ביטול קו תחתי */
     color: #333;
+    /* צבע טקסט אפור כהה */
     font-size: 15px;
+    /* גודל פונט */
     transition: color 0.3s;
+    /* אפקט מעבר לצבע */
     display: block;
+    /* תצוגת בלוק */
 }
 
+/* עיצוב מעבר עכבר על קישור */
 nav ul li a:hover {
     color: #d32f2f;
+    /* שינוי צבע לאדום */
 }
 
-/* Dropdown Menu Styles */
+/* #REGION Dropdown Menu */
+/* הורה של תפריט נפתח */
 .dropdown-parent {
     position: relative;
-    /* To position the dropdown absolute relative to this */
+    /* מיקום יחסי לעיגון התפריט הנפתח */
+    /* כדי למקם את התפריט הנפתח ביחס לזה */
 }
 
-/* Arrow Indicator */
+/* חץ אינדיקטור לתפריט */
 .dropdown-parent>a::after {
     content: "▼";
+    /* תו החץ */
     font-size: 8px;
+    /* גודל החץ */
     margin-right: 4px;
+    /* מרווח מימין */
     vertical-align: middle;
+    /* יישור אנכי */
     color: #555;
+    /* צבע אפור */
 }
 
-/* Robust invisible bridge to prevent dropdown from closing */
+/* גשר בלתי נראה למניעת סגירת התפריט */
 .dropdown-parent::after {
     content: "";
+    /* תוכן ריק */
     position: absolute;
+    /* מיקום מוחלט */
     top: calc(100% - 10px);
-    /* Overlap to ensure no gap */
+    /* מיקום מלמעלה עם חפיפה */
+    /* חפיפה כדי להבטיח שאין רווח */
     left: 0;
+    /* הצמדה לשמאל */
     width: 100%;
+    /* רוחב מלא */
     height: 20px;
-    /* Generous height to catch mouse movement */
+    /* גובה נדיב */
+    /* גובה נדיב כדי לתפוס את תנועת העכבר */
     background: transparent;
+    /* רקע שקוף */
     z-index: 10;
+    /* סדר תצוגה */
     display: none;
-    /* Hidden by default to prevent early triggering */
+    /* מוסתר כברירת מחדל */
+    /* מוסתר כדי למנוע הפעלה מוקדמת */
 }
 
+/* הצגת הגשר במעבר עכבר */
 .dropdown-parent:hover::after {
     display: block;
-    /* Only active when menu is already triggered */
+    /* הצגה */
+    /* פעיל רק כשהתפריט מופעל */
 }
 
+/* צבע החץ במעבר עכבר */
 .dropdown-parent:hover>a::after {
     color: #d32f2f;
+    /* אדום */
 }
 
-/* Dropdown Container */
+/* מיכל התפריט הנפתח */
 .dropdown-menu {
     display: none;
+    /* מוסתר כברירת מחדל */
     position: absolute;
+    /* מיקום מוחלט */
     top: 100%;
+    /* מתחת להורה */
     right: 0;
+    /* הצמדה לימין */
     min-width: 280px;
+    /* רוחב מינימלי */
     background-color: #1e40af;
-    /* Dark blue background */
+    /* רקע כחול כהה */
+    /* רקע כחול כהה */
     padding: 10px 0;
+    /* ריפוד */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* צל */
     z-index: 1000;
+    /* סדר תצוגה גבוה מאוד */
     margin-top: 5px;
+    /* מרווח עליון */
     border-radius: 4px;
+    /* פינות עגולות */
     flex-direction: column;
+    /* סידור אנכי */
     align-items: flex-start;
+    /* יישור להתחלה */
 }
 
+/* הצגת התפריט במעבר עכבר */
 .dropdown-parent:hover .dropdown-menu {
     display: flex;
+    /* תצוגת פלקס */
 }
 
-/* Dropdown Items */
+/* פריטי התפריט הנפתח */
 .dropdown-menu li {
     width: 100%;
+    /* רוחב מלא */
     border-left: none;
-    /* Remove vertical line separator */
+    /* ביטול קו הפרדה */
+    /* הסרת קו הפרדה אנכי */
     padding: 0;
+    /* ביטול ריפוד */
     margin: 0;
+    /* ביטול שוליים */
 }
 
+/* קישורים בתפריט הנפתח */
 .dropdown-menu li a {
     color: #fff;
-    /* White text */
+    /* צבע טקסט לבן */
+    /* טקסט לבן */
     padding: 8px 15px;
+    /* ריפוד */
     font-size: 11px;
+    /* גודל פונט */
     display: block;
+    /* תצוגת בלוק */
     text-align: right;
+    /* יישור לימין */
     white-space: nowrap;
+    /* מניעת שבירת שורות */
     font-weight: 500;
+    /* עובי פונט */
     transition: background-color 0.2s;
+    /* אנימציית רקע */
 }
 
+/* מעבר עכבר על פריט בתפריט הנפתח */
 .dropdown-menu li a:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    /* רקע לבן שקוף */
     color: #fff;
+    /* צבע טקסט */
 }
 
-/* Hero Banner Styles */
+/* #ENDREGION Dropdown Menu */
+/* #ENDREGION Navigation */
+/* #ENDREGION Header */
+
+/* #REGION Hero Banners */
+/* באנר ראשי */
 .hero-banner {
     background-color: #1e40af;
-    /* Deep blue similar to image */
+    /* רקע כחול עמוק */
+    /* כחול עמוק בדומה לתמונה */
     text-align: center;
+    /* יישור טקסט למרכז */
     padding: 10px 0;
+    /* ריפוד */
     width: 100%;
+    /* רוחב מלא */
     color: #fff;
+    /* צבע טקסט לבן */
     margin-top: 0;
+    /* ביטול מרווח עליון */
     position: relative;
+    /* מיקום יחסי */
     z-index: 5;
+    /* סדר תצוגה */
 }
 
+/* טקסט קטן בבאנר */
 .hero-text-small {
     font-size: 100px;
+    /* גודל פונט ענק */
     font-weight: 600;
+    /* עובי פונט */
     margin-bottom: 0;
+    /* ביטול מרווח תחתון */
     margin-top: 0;
+    /* ביטול מרווח עליון */
     line-height: 1.2;
+    /* גובה שורה */
 }
 
+/* טקסט גדול בבאנר */
 .hero-text-large {
     font-size: 120px;
+    /* גודל פונט עצום */
     font-weight: 800;
-    /* Extra bold */
+    /* עובי פונט מקסימלי */
+    /* מודגש במיוחד */
     line-height: 1;
+    /* גובה שורה */
     margin: 0;
+    /* ביטול שוליים */
 }
 
+/* באנר משני */
 .sub-hero-banner {
     background-color: #eff7e6;
-    /* Light greenish beige */
+    /* רקע בז' ירקרק בהיר */
+    /* ירקרק בהיר */
     text-align: center;
+    /* יישור למרכז */
     padding: 12px 0;
+    /* ריפוד */
     color: #333;
+    /* צבע טקסט */
     font-weight: 600;
-    /* Reverting to 600 or keeping user's choice? User set 10 which is too thin/invalid mostly. I'll set reasonable bold/semibold per previous design or just fix the layout. Let's fix layout first. I'll keep user's line-height/padding changes if possible but 10 is odd. I'll reset to 600 to be safe and visible. */
+    /* עובי פונט */
+    /* החזרה ל-600 לבטיחות */
     font-size: 1.2rem;
+    /* גודל פונט */
     width: 90%;
+    /* רוחב המיכל */
     max-width: 1000px;
-    /* Adjust as needed */
+    /* רוחב מקסימלי */
+    /* התאמה לפי הצורך */
     margin: 0 auto;
-    /* Center the block */
+    /* מרכוז */
+    /* מרכז את הבלוק */
     border-radius: 4px;
-    /* Optional: adds a nice touch if it's floating */
+    /* פינות עגולות */
+    /* אופציונלי: מראה נחמד */
 }
 
-/* Floating Chat Button */
+/* #ENDREGION Hero Banners */
+
+/* #REGION Floating Chat */
+/* כפתור צ'אט צף */
 .floating-chat {
     position: fixed;
+    /* מיקום קבוע במסך */
     bottom: 20px;
+    /* מרחק מהתחתית */
     right: 20px;
+    /* מרחק מימין */
     z-index: 2000;
+    /* סדר תצוגה עליון */
     display: flex;
+    /* תצוגת פלקס */
     flex-direction: column;
+    /* סידור אנכי */
     align-items: flex-end;
+    /* יישור לימין */
 }
 
+/* עיצוב הכפתור עצמו */
 .chat-button {
     background-color: #0066ff;
-    /* Bright Blue */
+    /* רקע כחול בהיר */
+    /* כחול בהיר */
     color: white;
+    /* טקסט לבן */
     text-decoration: none;
+    /* ללא קו תחתי */
     border-radius: 50px;
+    /* פינות עגולות לגמרי */
     padding: 10px 20px 10px 45px;
-    /* Extra padding left for icon if needed, or right for English */
-    /* Since direction is RTL, we might need padding-right for the icon if it's first */
+    /* ריפוד */
+    /* ריפוד נוסף לאייקון במידת הצורך */
+    /* כיוון שיש RTL ייתכן וצריך ריפוד הפוך */
     padding: 12px 25px;
+    /* ריפוד כללי */
     display: flex;
+    /* תצוגת פלקס */
     align-items: center;
+    /* יישור אנכי */
     gap: 10px;
+    /* מרווח בין אייקון לטקסט */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* צל */
     border: 2px solid #25D366;
-    /* Green border */
+    /* גבול ירוק */
+    /* גבול בצבע ירוק (וואטסאפ) */
     font-weight: 600;
+    /* עובי פונט */
     font-size: 16px;
+    /* גודל טקסט */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* אנימציות */
     white-space: nowrap;
+    /* ללא שבירת שורות */
 }
 
+/* מעבר עכבר על הצ'אט */
 .chat-button:hover {
     transform: translateY(-2px);
+    /* תזוזה קלה למעלה */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+    /* חיזוק הצל */
 }
 
+/* אייקון בתוך הכפתור */
 .chat-button i {
     font-size: 24px;
+    /* גודל האייקון */
 }
 
-/* Content Wrapper */
+/* #ENDREGION Floating Chat */
+
+/* #REGION Content Layout */
+/* עוטף התוכן המרכזי */
 .content-wrapper {
     max-width: 1200px;
+    /* רוחב מקסימלי */
     margin: 40px auto;
+    /* שוליים אנכיים ומרכוז אופקי */
     padding: 0 20px;
+    /* ריפוד צדדי */
     display: flex;
+    /* תצוגת פלקס */
     justify-content: center;
+    /* יישור למרכז */
     gap: 60px;
+    /* מרווח בין העמודות */
     align-items: flex-start;
+    /* יישור לחלק העליון */
     flex-wrap: wrap;
+    /* שבירת שורות במידת הצורך */
 }
 
-/* Career Grid Section */
+/* #ENDREGION Content Layout */
+
+/* #REGION Career Grid */
+/* מיכל גריד הקריירות */
 .career-grid-container {
     flex: 1;
+    /* תופס מקום פנוי */
     max-width: 600px;
+    /* רוחב מקסימלי */
     text-align: center;
+    /* יישור טקסט למרכז */
 }
 
+/* כותרת הגריד */
 .career-grid-container h2 {
     font-size: 40px;
+    /* גודל פונט */
     font-weight: 800;
+    /* עובי פונט */
     margin-bottom: 40px;
+    /* מרווח תחתון */
     color: #000;
+    /* טקסט שחור */
 }
 
+/* הגריד עצמו */
 .career-grid {
     display: grid;
+    /* תצוגת גריד */
     grid-template-columns: repeat(4, 1fr);
+    /* 4 עמודות שוות */
     gap: 20px;
+    /* מרווח בין הפריטים */
     direction: ltr;
-    /* To match visual order in image if needed, or keeping rtl but adjust order */
+    /* כיוון שמאל לימין לסידור הגריד */
+    /* להתאמה ויזואלית לתמונה */
 }
 
-/* Adjust grid for RTL to match image visual order if necessary. 
-   Image shows Cyber (Top Right in RTL? No, Image shows Cyber Top Right).
-   In RTL, first item is Right. So standard grid is fine.
-*/
+/* תיקון כיוון הגריד לעברית */
 .career-grid {
     direction: rtl;
+    /* חזרה לימין לשמאל */
 }
 
+/* פריט בגריד */
 .grid-item {
     display: flex;
+    /* תצוגת פלקס */
     flex-direction: column;
+    /* סידור אנכי */
     align-items: center;
+    /* מרכוז */
     text-align: center;
+    /* יישור טקסט */
 }
 
+/* טקסט בתוך פריט גריד */
 .grid-item p {
     font-size: 14px;
+    /* גודל פונט */
     line-height: 1.2;
+    /* גובה שורה */
     margin-top: 10px;
+    /* מרווח עליון */
     font-weight: 600;
+    /* עובי פונט */
     color: #333;
+    /* צבע טקסט */
 }
 
+/* טקסט משני בתוך פריט גריד */
 .grid-item p span {
     font-size: 11px;
+    /* גודל פונט קטן */
     font-weight: 400;
+    /* עובי פונט רגיל */
 }
 
+/* עיגול האייקון */
 .icon-circle {
     width: 70px;
+    /* רוחב */
     height: 70px;
+    /* גובה */
     border-radius: 50%;
+    /* עיגול מושלם */
     display: flex;
+    /* תצוגת פלקס */
     align-items: center;
+    /* מרכוז אנכי */
     justify-content: center;
+    /* מרכוז אופקי */
     color: white;
+    /* צבע אייקון */
     font-size: 30px;
+    /* גודל אייקון */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* צל */
     margin-bottom: 10px;
+    /* מרווח תחתון */
 }
 
-/* Icon Colors - Matching Image */
+/* צבעי רקע לאייקונים */
 .icon-blue {
     background-color: #3b82f6;
 }
 
-/* QA - Bright Blue */
+/* כחול */
 .icon-dark-blue {
     background-color: #3b5998;
 }
 
-/* Facebook - Navy */
+/* כחול כהה */
 .icon-grey-cloud {
     background-color: #9ca3af;
 }
 
-/* Cloud - Grey */
+/* אפור ענן */
 .icon-green-shield {
     background-color: #34d399;
 }
 
-/* Cyber - Green */
+/* ירוק */
 .icon-dark-grey {
     background-color: #4b5563;
 }
 
-/* Embedded - Dark Grey */
+/* אפור כהה */
 .icon-grey-apple {
     background-color: #9ca3af;
 }
 
-/* Apple - Grey */
+/* אפור אפל */
 .icon-purple-code {
     background-color: #a855f7;
 }
 
-/* Code - Purple */
+/* סגול */
 .icon-yellow-mouse {
     background-color: #fcd34d;
 }
 
-/* UI/UX - Yellow */
+/* צהוב */
 
+/* צבע האייקון עצמו */
 .icon-circle i {
     color: white;
-    /* Default white icon */
+    /* ברירת מחדל לבן */
+    /* אייקון לבן */
 }
 
+/* #ENDREGION Career Grid */
 
-/* Lead Form Section */
+/* #REGION Lead Form */
+/* מיכל הטופס הראשי */
 .lead-form-container {
     width: 350px;
+    /* רוחב קבוע */
     background-color: #1a3b96;
-    /* Dark Blue */
+    /* רקע כחול כהה */
+    /* כחול כהה */
     padding: 20px;
+    /* ריפוד */
     display: flex;
+    /* תצוגת פלקס */
     flex-direction: column;
+    /* סידור אנכי */
     align-items: center;
+    /* מרכוז */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* צל */
 }
 
+/* כותרת הטופס */
 .lead-form-container h3 {
     color: white;
+    /* טקסט לבן */
     font-size: 24px;
+    /* גודל פונט */
     margin-bottom: 20px;
+    /* מרווח תחתון */
     font-weight: 700;
+    /* מודגש */
 }
 
+/* אלמנט הטופס */
 .lead-form-container form {
     width: 100%;
+    /* רוחב מלא */
     display: flex;
+    /* תצוגת פלקס */
     flex-direction: column;
+    /* סידור אנכי */
     gap: 15px;
+    /* מרווח בין שדות */
 }
 
+/* קבוצת שדה בטופס */
 .form-group {
     position: relative;
+    /* מיקום יחסי למיקום התווית */
     display: flex;
+    /* תצוגת פלקס */
     align-items: center;
+    /* יישור אנכי */
 }
 
+/* שדה הקלט */
 .form-group input {
     width: 100%;
+    /* רוחב מלא */
     padding: 10px;
+    /* ריפוד */
     border: none;
+    /* ללא מסגרת */
     font-size: 16px;
+    /* גודל פונט */
     text-align: right;
+    /* יישור טקסט לימין */
     height: 45px;
+    /* גובה השדה */
     direction: rtl;
-    /* Force RTL for neutral characters like pipe */
+    /* כיוון ימין לשמאל */
+    /* כפיית כיוון RTL */
     unicode-bidi: bidi-override;
-    /* ensure strict RTL override if needed */
+    /* אכיפת סדר תווים */
+    /* הבטחת RTL קפדנית */
 }
 
+/* תווית השדה */
 .form-group label {
     position: absolute;
+    /* מיקום מוחלט */
     right: 15px;
+    /* מרחק מימין */
     color: #1a3b96;
-    /* Match placeholder color */
+    /* צבע כחול (כמו הרקע) */
+    /* תואם לצבע הפלייספולדר */
     font-weight: 700;
+    /* מודגש */
     pointer-events: none;
+    /* התעלמות מקליקים */
     display: block;
-    /* Make visible */
+    /* תצוגת בלוק */
+    /* הופך לנראה */
     z-index: 10;
+    /* מעל לשדה */
 }
 
-/* Custom label look inside input */
+/* עיצוב שדה הקלט כדי לפנות מקום לתווית */
 .form-group input {
     padding-right: 90px;
-    /* Space for the label */
+    /* ריפוד ימני גדול עבור התווית */
+    /* מקום לתווית */
 }
 
+/* עיצוב הפלייספולדר */
 .form-group input::placeholder {
     color: #1a3b96;
+    /* צבע כחול */
     font-weight: 700;
+    /* מודגש */
 }
 
-/* Checkbox */
+/* תיבת סימון */
 .form-checkbox {
     display: flex;
+    /* תצוגת פלקס */
     align-items: flex-start;
+    /* יישור להתחלה */
     gap: 10px;
+    /* מרווח */
     color: white;
+    /* טקסט לבן */
     font-size: 11px;
+    /* גודל פונט קטן */
     margin-top: 10px;
+    /* מרווח עליון */
     line-height: 1.2;
+    /* גובה שורה */
 }
 
+/* תיבת הסימון עצמה */
 .form-checkbox input {
     margin-top: 2px;
+    /* יישור אופטי */
 }
 
-/* Links */
+/* קישורים בטופס */
 .form-links {
     display: flex;
+    /* תצוגת פלקס */
     flex-direction: column;
+    /* סידור אנכי */
     align-items: center;
+    /* מרכוז */
     gap: 5px;
+    /* מרווח */
     margin-top: 10px;
+    /* מרווח עליון */
 }
 
+/* עיצוב הקישורים */
 .form-links a {
     color: #ccc;
+    /* צבע אפור בהיר */
     font-size: 10px;
+    /* גודל פונט קטן */
     text-decoration: underline;
+    /* קו תחתי */
 }
 
-/* Submit Button */
+/* כפתור שליחה */
 .submit-btn {
     background-color: #fef9c3;
-    /* Light beige/yellow */
+    /* רקע צהבהב */
+    /* צהבהב בהיר */
     color: #000;
+    /* טקסט שחור */
     border: 2px solid #5eead4;
-    /* Teal border like image */
+    /* גבול טורקיז */
+    /* טורקיז כמו בתמונה */
     font-size: 28px;
+    /* גודל פונט גדול */
     font-weight: 800;
+    /* מודגש מאוד */
     padding: 5px 0;
+    /* ריפוד */
     margin-top: 15px;
+    /* מרווח עליון */
     cursor: pointer;
+    /* סמן יד */
     width: 100%;
+    /* רוחב מלא */
     transition: transform 0.2s;
+    /* אנימציה */
 }
 
+/* מעבר עכבר על כפתור השליחה */
 .submit-btn:hover {
     transform: scale(1.02);
+    /* הגדלה קלה */
 }
 
-/* Responsive */
+/* #ENDREGION Lead Form */
+
+/* #REGION Responsive Styles */
+/* התאמות למסכים קטנים מ-900 פיקסלים */
 @media (max-width: 900px) {
     .content-wrapper {
         flex-direction: column-reverse;
-        /* Stack Form below Grid, or above? Image has grid on R, Form on L. In Mobile, usually main content first. Let's try column-reverse to put Grid on top, Form on bottom? Or standard column. Let's stick to standard column (Left comes first). */
+        /* היפוך סדר העמודות (גריד למעלה, טופס למטה??) לא, ההיפך */
+        /* סידור אנכי */
         align-items: center;
+        /* מרכוז */
     }
 
     .career-grid {
         grid-template-columns: repeat(2, 1fr);
+        /* 2 עמודות בגריד */
     }
 }
 
-/* Why Us Section */
+/* #ENDREGION Responsive Styles */
+
+/* #REGION Why Us Section */
+/* אזור למה ללמוד אצלנו */
 .why-us-section {
     width: 100%;
-    /* Full width */
+    /* רוחב מלא */
+    /* רוחב מלא */
     margin: 60px 0;
-    /* Vertical spacing only */
+    /* מרווח אנכי */
+    /* מרווח אנכי בלבד */
     padding: 60px 0;
-    /* Top/Bottom padding inside */
+    /* ריפוד פנימי */
+    /* ריפוד עליון ותחתון */
     background-color: #f4f8fb;
-    /* Light grey/blue background */
-    /* Strong inner top/bottom shadow to simulate depth */
+    /* רקע תכלת בהיר */
+    /* תכלת בהיר */
+    /* צל פנימי חזק ליצירת עומק */
     box-shadow: inset 0 15px 15px -10px rgba(0, 0, 0, 0.1), inset 0 -15px 15px -10px rgba(0, 0, 0, 0.1);
     border-radius: 0;
-    /* Remove radius since it's full width */
+    /* ללא רדיוס */
+    /* ללא רדיוס כי זה רוחב מלא */
 }
 
-/* New inner container for content centering */
+/* מיכל פנימי */
 .why-us-container-inner {
     max-width: 1200px;
+    /* רוחב מקסימלי */
     margin: 0 auto;
+    /* מרכוז */
     padding: 0 20px;
+    /* ריפוד צדדי */
     text-align: center;
+    /* מרכוז טקסט */
 }
 
+/* כותרת האזור */
 .why-us-title {
     font-size: 40px;
+    /* גודל פונט */
     font-weight: 800;
+    /* עובי פונט */
     margin-bottom: 20px;
+    /* מרווח תחתון */
     color: #000;
+    /* שחור */
 }
 
+/* טקסט פתיחה */
 .why-us-intro {
     font-size: 18px;
+    /* גודל פונט */
     margin-bottom: 40px;
+    /* מרווח תחתון */
     line-height: 1.6;
+    /* גובה שורה */
     text-align: right;
-    /* Right align intro text */
+    /* יישור לימין */
+    /* יישור לימין */
 }
 
+/* טקסט מודגש בפתיחה */
 .intro-bold {
     font-weight: 700;
+    /* מודגש */
     margin: 10px 0;
+    /* מרווח אנכי */
 }
 
+/* טקסט כחול בפתיחה */
 .intro-blue {
     color: #1e40af;
-    /* Blue text */
+    /* כחול */
+    /* טקסט כחול */
     font-weight: 700;
+    /* מודגש */
 }
 
+/* מיכל ההשוואה */
 .comparison-container {
     display: flex;
+    /* תצוגת פלקס */
     gap: 30px;
+    /* מרווח בין עמודות */
     justify-content: center;
+    /* מרכוז */
     align-items: stretch;
+    /* מתיחה לגובה אחיד */
     flex-wrap: wrap;
+    /* שבירת שורות */
 }
 
+/* עמודת השוואה */
 .comparison-column {
     flex: 1;
+    /* גודל שווה */
     padding: 40px;
+    /* ריפוד */
     text-align: right;
+    /* יישור לימין */
     min-width: 300px;
+    /* רוחב מינימלי */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* צל */
     transition: transform 0.4s ease;
-    /* Smooth growth */
+    /* אנימציה */
+    /* גדילה חלקה */
 }
 
+/* מעבר עכבר על עמודה */
 .comparison-column:hover {
     transform: scale(1.03);
-    /* Grow on hover */
+    /* הגדלה */
+    /* גדילה */
     z-index: 2;
+    /* מעל האלמנטים האחרים */
 }
 
-/* Market Column (Black) */
+/* עמודת השוק (שחורה) */
 .market-column {
     background-color: #000;
+    /* שחור */
     color: white;
+    /* לבן */
 }
 
+/* כותרת בעמודה */
 .market-column h3 {
     font-size: 20px;
+    /* גודל פונט */
     margin-bottom: 20px;
+    /* מרווח תחתון */
     line-height: 1.4;
+    /* גובה שורה */
     font-weight: 700;
+    /* מודגש */
 }
 
+/* תת כותרת */
 .market-column .subtitle {
     font-weight: 400;
+    /* רגיל */
     font-size: 16px;
+    /* גודל פונט */
 }
 
+/* טקסט עם קו תחתי */
 .market-column .underline {
     text-decoration: underline;
+    /* קו תחתי */
 }
 
+/* רשימה ממוספרת בעמודה */
 .market-column ol {
     padding-right: 20px;
+    /* ריפוד לימין עבור המספרים */
     margin-bottom: 20px;
+    /* מרווח תחתון */
 }
 
+/* פריט ברשימה */
 .market-column li {
     margin-bottom: 15px;
+    /* מרווח תחתון */
     font-size: 14px;
+    /* גודל פונט */
     line-height: 1.5;
+    /* גובה שורה */
 }
 
+/* סיכום בתחתית העמודה */
 .market-summary {
     font-size: 14px;
+    /* גודל פונט */
     line-height: 1.5;
+    /* גובה שורה */
     margin-top: 20px;
+    /* מרווח עליון */
     border-top: 1px solid #444;
+    /* קו הפרדה עליון */
     padding-top: 15px;
+    /* ריפוד עליון */
 }
 
-/* Us Column (Light) */
+/* עמודה שלנו (בהירה) */
 .us-column {
     background-color: #f0fdf4;
-    /* Very light green/beige */
+    /* ירקרק בהיר מאוד */
+    /* ירקרק/בז' מאוד בהיר */
     color: #000;
+    /* שחור */
 }
 
+/* כותרת */
 .us-column h3 {
     font-size: 20px;
     margin-bottom: 20px;
@@ -660,113 +1048,178 @@ nav ul li a:hover {
     font-weight: 700;
 }
 
+/* תת כותרת */
 .us-subtext {
     margin-bottom: 20px;
     font-weight: 700;
 }
 
+/* רשימה */
 .us-column ol {
     padding-right: 20px;
 }
 
+/* פריט רשימה */
 .us-column li {
     margin-bottom: 15px;
     font-size: 14px;
     line-height: 1.5;
 }
 
+/* ריספונסיבי להשוואה */
 @media (max-width: 900px) {
     .comparison-container {
         flex-direction: column;
+        /* סידור אנכי במובייל */
     }
 }
 
-/* Graduates Section */
+/* #ENDREGION Why Us Section */
+
+/* #REGION Graduates Section */
+/* אזור הבוגרים */
 .graduates-section {
     max-width: 1200px;
+    /* רוחב מקסימלי */
     margin: 60px auto;
+    /* מרכוז */
     padding: 0 20px;
+    /* ריפוד */
     text-align: center;
+    /* יישור למרכז */
 }
 
+/* כותרת הבוגרים */
 .graduates-title {
     font-size: 40px;
+    /* גודל */
     font-weight: 800;
+    /* עובי */
     margin-bottom: 50px;
+    /* מרווח */
     color: #000;
+    /* שחור */
 }
 
+/* גריד הלוגואים */
 .logo-grid {
     display: grid;
+    /* גריד */
     grid-template-columns: repeat(6, 1fr);
+    /* 6 עמודות */
     gap: 30px;
+    /* מרווח */
     align-items: center;
+    /* יישור אנכי */
     justify-items: center;
+    /* יישור אופקי */
     direction: ltr;
-    /* Logos text usually LTR, keeps grid stable */
+    /* שמאל לימין */
+    /* לשמירה על יציבות הגריד */
 }
 
+/* פריט לוגו */
 .logo-item {
     width: 100%;
+    /* רוחב */
     height: 80px;
+    /* גובה */
     display: flex;
+    /* פלקס */
     align-items: center;
+    /* מרכוז */
     justify-content: center;
+    /* מרכוז */
     background-color: #fff;
+    /* רקע לבן */
     border: 1px solid #eee;
+    /* מסגרת עדינה */
     color: #888;
+    /* צבע אפור */
     font-weight: 700;
+    /* מודגש */
     font-size: 14px;
+    /* גודל */
     border-radius: 8px;
+    /* פינות */
     transition: all 0.3s ease;
+    /* אנימציה */
     cursor: default;
+    /* סמן */
     padding: 10px;
+    /* ריפוד */
     overflow: hidden;
+    /* הסתרת חריגה */
 }
 
+/* תמונת לוגו */
 .logo-item img {
     max-width: 100%;
+    /* רוחב מקסימלי */
     max-height: 100%;
+    /* גובה מקסימלי */
     object-fit: contain;
+    /* התאמה */
     filter: grayscale(100%);
+    /* שחור לבן */
     transition: filter 0.3s ease;
+    /* אנימציה */
 }
 
+/* מעבר עכבר על לוגו */
 .logo-item:hover {
     border-color: #ccc;
+    /* מסגרת כהה יותר */
     color: #333;
+    /* טקסט כהה */
     transform: translateY(-2px);
+    /* תזוזה */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    /* צל */
 }
 
+/* מעבר עכבר על התמונה */
 .logo-item:hover img {
     filter: grayscale(0%);
+    /* צבעוני */
 }
 
+/* ריספונסיבי ללוגואים */
 @media (max-width: 1000px) {
     .logo-grid {
         grid-template-columns: repeat(4, 1fr);
+        /* 4 עמודות */
     }
 }
 
 @media (max-width: 600px) {
     .logo-grid {
         grid-template-columns: repeat(2, 1fr);
+        /* 2 עמודות */
     }
 }
 
-/* About Us Section Styles */
+/* #ENDREGION Graduates Section */
+
+/* #REGION About Us Section */
+/* אזור אודות */
 .about-us-section {
     width: 100%;
+    /* רוחב מלא */
     margin: 60px 0 0 0;
-    /* Remove bottom margin to connect with next section */
+    /* מרווח מלמעלה בלבד */
+    /* ביטול מרווח תחתון לחיבור לאזור הבא */
     padding: 60px 0;
+    /* ריפוד */
     background-color: #f0fdf4;
-    /* Match How It Works background */
+    /* רקע ירקרק */
+    /* תואם לרקע של איך זה עובד */
     box-shadow: inset 0 15px 15px -10px rgba(0, 0, 0, 0.05);
-    /* Remove bottom shadow */
+    /* צל פנימי קל */
+    /* הסרת צל תחתון */
 }
 
+/* מיכל אודות */
 .about-us-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -774,6 +1227,7 @@ nav ul li a:hover {
     text-align: center;
 }
 
+/* כותרת אודות */
 .about-us-title {
     font-size: 36px;
     font-weight: 800;
@@ -781,491 +1235,377 @@ nav ul li a:hover {
     color: #000;
 }
 
+/* תוכן אודות */
 .about-us-content {
     font-size: 16px;
-    /* Slightly smaller to match screenshot */
+    /* מעט קטן יותר להתאמה */
     line-height: 1.8;
     color: #333;
     text-align: right;
 }
 
+/* טקסט מודגש באודות */
 .about-us-content strong {
     font-weight: 700;
     color: #000;
 }
 
+/* ריספונסיבי אודות */
 @media (max-width: 900px) {
     .about-us-title {
         font-size: 30px;
     }
-
-    .about-us-content {
-        font-size: 16px;
-    }
 }
 
-/* How It Works Section */
+/* #ENDREGION About Us Section */
+
+/* #REGION How It Works Section */
+/* אזור איך זה עובד */
 .how-it-works-section {
     width: 100%;
-    position: relative;
-    padding-top: 0;
-    /* No top padding to look seamless */
-    background-color: #f0fdf4;
-    /* Very light background to separate */
-}
-
-.how-it-works-section .section-title {
-    text-align: center;
-    font-size: 36px;
-    /* Match About Us title size */
-    font-weight: 800;
-    margin-bottom: 40px;
-    color: #000;
-}
-
-.how-it-works-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    direction: rtl;
-    /* Ensures Step 1 is Top Right */
-}
-
-.how-it-works-item {
-    padding: 60px 80px;
-    color: #fff;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.how-it-works-item h3 {
-    font-size: 24px;
-    font-weight: 400;
-    /* Lighter weight header as per image */
-    margin-bottom: 20px;
-}
-
-.how-it-works-item p {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    font-weight: 400;
-}
-
-/* Step 1: Top Right - Teal */
-.step-1 {
-    background-color: #2dd4bf;
-    /* Teal - approx #2dd4bf or #14b8a6 */
-    grid-column: 1;
-    /* Right in RTL */
-    grid-row: 1;
-}
-
-/* Step 2: Top Left - Light Blue */
-.step-2 {
-    background-color: #0ea5e9;
-    /* Sky Blue - approx #0ea5e9 or #0284c7 */
-    grid-column: 2;
-    /* Left in RTL */
-    grid-row: 1;
-}
-
-/* Step 3: Bottom Left - Bright Blue */
-.step-3 {
-    background-color: #2563eb;
-    /* Royal Blue */
-    grid-column: 2;
-    /* Left in RTL */
-    grid-row: 2;
-}
-
-/* Step 4: Bottom Right - Navy Blue */
-.step-4 {
-    background-color: #1e3a8a;
-    /* Dark Navy */
-    grid-column: 1;
-    /* Right in RTL */
-    grid-row: 2;
-}
-
-/* Arrow Indicators */
-/* Arrow Step 1 -> Step 2 (Pointing Left) */
-.step-1::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -29px;
-    transform: translateY(-50%);
-    border-top: 30px solid transparent;
-    border-bottom: 30px solid transparent;
-    border-right: 30px solid #2dd4bf;
-    /* Match bg color */
-    z-index: 10;
-}
-
-/* Arrow Step 2 -> Step 3 (Pointing Down) */
-.step-2::after {
-    content: '';
-    position: absolute;
-    bottom: -29px;
-    left: 15%;
-    /* Indented from left */
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-top: 30px solid #0ea5e9;
-    /* Match bg color */
-    z-index: 10;
-}
-
-/* Arrow Step 3 -> Step 4 (Pointing Right) */
-.step-3::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -29px;
-    transform: translateY(-50%);
-    border-top: 30px solid transparent;
-    border-bottom: 30px solid transparent;
-    border-left: 30px solid #2563eb;
-    /* Match bg color */
-    z-index: 10;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-    .how-it-works-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-
-    .how-it-works-item {
-        padding: 40px 20px;
-    }
-
-    /* Reset Grid Positions for mobile stack */
-    .step-1 {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .step-2 {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .step-3 {
-        grid-column: 1;
-        grid-row: 3;
-    }
-
-    .step-4 {
-        grid-column: 1;
-        grid-row: 4;
-    }
-
-    /* Hide arrows on mobile stack */
-    .step-1::after,
-    .step-2::after,
-    .step-3::after {
-        display: none;
-    }
-}
-
-/* Questions and Answers Section */
-.questions-answers-section {
-    width: 100%;
+    /* רוחב מלא */
     padding: 60px 0;
-    background-color: #fffbeb;
-    /* Light warm beige/yellow to match screenshot */
-    direction: rtl;
+    /* ריפוד */
+    background-color: #f0fdf4;
+    /* רקע ירקרק */
+    /* ירקרק תואם */
+    padding-bottom: 15px;
+    /* ריפוד תחתון מופחת לחיבור */
 }
 
-.questions-answers-section .section-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* כותרת האזור */
+.section-title {
     text-align: center;
-}
-
-.questions-answers-section h2 {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 800;
     margin-bottom: 50px;
     color: #000;
 }
 
-.section-inner-container {
-    display: flex;
-    gap: 60px;
+/* גריד השלבים */
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 עמודות */
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 40px;
+    /* מרווח */
+    padding: 0 20px;
+}
+
+/* פריט שלב */
+.how-it-works-item {
+    background: transparent;
+    /* רקע שקוף */
     text-align: right;
-    align-items: flex-start;
+    /* יישור לימין */
 }
 
-.questions-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.question-answer-container {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    /* Optional: subtle separator if needed, screenshot looks clean though */
-    padding-bottom: 10px;
-}
-
-.question-answer-container:last-child {
-    border-bottom: none;
-}
-
-.question {
-    color: #1e40af;
-    /* Blue title */
+/* כותרת שלב */
+.how-it-works-item h3 {
+    font-size: 24px;
     font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    /* Align icon to top if text wraps */
-    line-height: 1.3;
+    margin-bottom: 15px;
+    color: #000;
 }
 
-.question i {
-    color: #0ea5e9;
-    /* Light blue icon */
-    font-size: 20px;
-    margin-right: 15px;
-    /* Space between text and icon */
-    margin-top: 2px;
-    flex-shrink: 0;
-}
-
-.answer.show {
-    color: #333;
-    font-size: 15px;
+/* פסקה בשלב */
+.how-it-works-item p {
+    font-size: 16px;
     line-height: 1.6;
-    font-weight: 400;
+    margin-bottom: 15px;
+    color: #333;
 }
 
-.answer ol {
-    padding-right: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.answer li {
-    margin-bottom: 5px;
-}
-
-.answer-link {
-    color: #1e40af;
-    font-weight: 700;
-    text-decoration: underline;
-}
-
-/* Responsive */
+/* ריספונסיבי לשלבים */
 @media (max-width: 900px) {
-    .section-inner-container {
-        flex-direction: column;
-        gap: 30px;
+    .how-it-works-grid {
+        grid-template-columns: 1fr;
+        /* עמודה אחת */
     }
 }
 
-/* Update Question pointer */
-.question {
-    cursor: pointer;
-}
+/* #ENDREGION How It Works Section */
 
-/* Update arrow rotation */
-.question i {
-    transition: transform 0.4s ease;
-}
-
-.question.active i {
-    transform: rotate(180deg);
-}
-
-/* Update Answer visibility and transition */
-.answer {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    line-height: 1.6;
-    font-weight: 400;
-    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
-    padding: 0;
-    /* Remove padding when closed to avoid taking space */
-}
-
-/* Open Answer state */
-.answer.open {
-    max-height: 500px;
-    /* Large enough for content */
-    opacity: 1;
-    margin-top: 10px;
-    /* Add margin only when open if needed, or keep in flow */
-}
-
-.public-service-section {
-    background-color: #f0f9ff;
-    /* Light blue (AliceBlue/Azure ish) */
-}
-
-/* Contact Strip Section */
-.contact-strip-section {
+/* #REGION Questions & Answers */
+/* אזור שאלות ותשובות */
+.questions-answers-section {
     width: 100%;
-    background-color: #1e40af;
-    /* Deep Blue from image */
-    padding: 40px 0;
-    margin: 60px 0;
-    /* Space from previous section */
-    text-align: center;
-    color: white;
+    /* רוחב מלא */
+    padding: 60px 0;
+    /* ריפוד */
+    background-color: #fff;
+    /* רקע לבן */
+    border-top: 1px solid #eee;
+    /* קו הפרדה עליון */
 }
 
-.contact-strip-container {
+/* מיכל הסקשן */
+.section-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.contact-title {
-    font-size: 24px;
+/* כותרת ראשית */
+.section-container h2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+/* מיכל פנימי לשני הטורים */
+.section-inner-container {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* עמודת שאלות */
+.questions-column {
+    flex: 1;
+    /* חצי רוחב */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* מרווח בין שאלות */
+}
+
+/* מיכל שאלה-תשובה */
+.question-answer-container {
+    border-bottom: 1px solid #eee;
+    /* קו הפרדה תחתון */
+    padding-bottom: 15px;
+}
+
+/* השאלה עצמה */
+.question {
+    font-size: 18px;
     font-weight: 700;
-    margin-bottom: 30px;
+    color: #333;
+    cursor: pointer;
+    /* סמן יד */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+/* מעבר עכבר על שאלה */
+.question:hover {
+    color: #1e40af;
+    /* שינוי צבע לכחול */
+}
+
+/* אייקון השאלה */
+.question i {
+    color: #ccc;
+    transition: transform 0.3s;
+    font-size: 20px;
+}
+
+/* מצב פעיל של שאלה */
+.question.active i {
+    transform: rotate(180deg);
+    /* היפוך חץ */
+    color: #1e40af;
+}
+
+/* התשובה */
+.answer {
+    display: none;
+    /* מוסתר כברירת מחדל */
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    padding-left: 20px;
+}
+
+/* מצב פתוח של תשובה */
+.answer.open {
+    display: block;
+    /* מוצג */
+    animation: fadeIn 0.3s ease;
+    /* אנימציית הופעה */
+}
+
+/* קישור בתוך תשובה */
+.answer-link {
+    color: #1e40af;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* אנימציית הופעה */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ריספונסיבי לשאלות */
+@media (max-width: 900px) {
+    .section-inner-container {
+        flex-direction: column;
+        /* עמודה אחת */
+    }
+}
+
+/* #ENDREGION Questions & Answers */
+
+/* #REGION Public Service */
+/* אזור שירות לציבור - עיצוב יחודי */
+.public-service-section {
+    background-color: #f9fafb;
+    /* רקע אפור בהיר */
+}
+
+/* #ENDREGION Public Service */
+
+/* #REGION Contact Strip */
+/* סטריפ צור קשר תחתון */
+.contact-strip-section {
+    width: 100%;
+    background-color: #1a3b96;
+    /* כחול כהה */
+    padding: 30px 0;
     color: white;
 }
 
-.contact-strip-form {
+/* מיכל הסטריפ */
+.contact-strip-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* כותרת הסטריפ */
+.contact-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* הטופס בסטריפ */
+.contact-strip-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     gap: 15px;
 }
 
+/* שורה בטופס (קלט והכפתור) */
 .form-row {
     display: flex;
+    gap: 15px;
     justify-content: center;
     align-items: center;
-    gap: 20px;
     flex-wrap: wrap;
-    width: 100%;
+    /* שבירה במובייל */
 }
 
-/* Input Group styling */
+/* קבוצת קלט בסטריפ */
 .strip-input-group {
-    background-color: white;
-    display: flex;
-    align-items: center;
-    padding: 0;
-    height: 50px;
-    width: 280px;
-    /* Slightly wider */
-    border-radius: 2px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* In RTL: Flex Start is Right. Child 1 is Label. Child 2 is Input. */
+    position: relative;
+    width: 250px;
+    /* רוחב שדה */
 }
 
-.strip-input-group label {
-    color: #333;
-    font-weight: 700;
-    font-size: 16px;
-    padding-right: 15px;
-    padding-left: 5px;
-    /* Separator pipe is in text */
-    white-space: nowrap;
-    cursor: default;
-    border-left: 1px solid transparent;
-    /* Optional if we wanted real border */
-}
-
+/* שדה קלט בסטריפ */
 .strip-input-group input {
-    flex: 1;
+    width: 100%;
+    height: 40px;
+    padding: 5px 40px 5px 10px;
+    /* מקום לתווית */
     border: none;
-    outline: none;
-    height: 100%;
-    padding: 0 10px;
-    font-size: 16px;
-    background: transparent;
+    font-size: 14px;
     text-align: right;
-    /* Type from right */
+    direction: rtl;
 }
 
-/* Button Styling */
+/* תווית בסטריפ */
+.strip-input-group label {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #1a3b96;
+    font-weight: 700;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* כפתור שליחה בסטריפ */
 .strip-submit-btn {
     background-color: #fef9c3;
-    /* Light yellow */
+    /* צהוב */
     color: #000;
-    border: 3px solid #5eead4;
-    /* Teal border */
-    font-size: 24px;
+    border: 2px solid #5eead4;
+    /* טורקיז */
+    height: 40px;
+    padding: 0 30px;
     font-weight: 800;
-    padding: 0 40px;
-    height: 50px;
+    font-size: 18px;
     cursor: pointer;
-    transition: transform 0.2s;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     white-space: nowrap;
+    transition: transform 0.2s;
 }
 
+/* מעבר עכבר על כפתור סטריפ */
 .strip-submit-btn:hover {
     transform: scale(1.05);
 }
 
-/* Footer Row */
+/* שורה תחתונה (צ'קבוקס וקישורים) */
 .form-footer-row {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 20px;
+    font-size: 12px;
+    color: #ccc;
+    flex-wrap: wrap;
 }
 
+/* מיכל צ'קבוקס */
 .checkbox-wrapper {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.checkbox-wrapper input {
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-}
-
-.footer-links {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 5px;
 }
 
+/* קישורים בתחתית */
+.footer-links {
+    display: flex;
+    gap: 10px;
+}
+
 .footer-links a {
-    color: #cbd5e1;
-    /* Light grey */
-    font-size: 12px;
+    color: #ccc;
     text-decoration: underline;
 }
 
-.footer-links a:hover {
-    color: white;
-}
-
-/* Responsive */
-@media (max-width: 1000px) {
+/* ריספונסיבי לסטריפ */
+@media (max-width: 900px) {
     .form-row {
         flex-direction: column;
+        /* עמודה במובייל */
         align-items: stretch;
-        max-width: 400px;
-        margin: 0 auto;
     }
 
     .strip-input-group {
@@ -1277,418 +1617,307 @@ nav ul li a:hover {
     }
 }
 
-/* Popup Styles Fixed */
+/* #ENDREGION Contact Strip */
+
+/* #REGION Popups & Mobile Nav */
+/* שכבת רקע לפופאפ */
 .popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.45);
-    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* רקע כהה חצי שקוף */
     display: none;
+    /* מוסתר */
     justify-content: center;
     align-items: center;
-    animation: fadeIn 0.3s ease;
+    z-index: 3000;
+    /* הכי גבוה */
 }
 
+/* מיכל הפופאפ */
 .popup-container {
-    background-color: #f6cda7;
-    background-image: linear-gradient(135deg, #f6cda7 0%, #e8b688 100%);
-    width: 550px;
-    height: 550px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 60px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    animation: scaleUp 0.3s ease;
-}
-
-.popup-content h2 {
-    color: #1e3a8a;
-    font-size: 28px;
-    font-weight: 800;
-    margin-bottom: 25px;
-    line-height: 1.2;
-}
-
-.popup-form-group {
-    margin-bottom: 12px;
-    width: 100%;
-}
-
-.popup-form-group input {
-    width: 100%;
-    padding: 12px 15px;
-    border: none;
-    font-size: 16px;
-    background-color: #fff;
-    text-align: right;
-    direction: rtl;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.popup-form-group input::placeholder {
-    color: #666;
-    font-size: 14px;
-}
-
-.popup-form-checkbox {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 12px;
-    color: #1e3a8a;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-align: right;
-    justify-content: flex-start;
-    width: 100%;
-    padding-right: 5px;
-}
-
-.popup-submit-btn {
     background-color: #1a3b96;
-    color: #fff;
-    border: none;
-    padding: 12px 40px;
-    font-size: 20px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 70%;
-    margin: 10px auto 0 auto;
-    display: block;
+    /* כחול כהה */
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 3px solid #fff;
 }
 
-.popup-submit-btn:hover {
-    background-color: #1e40af;
-}
-
+/* כפתור סגירה */
 .close-popup-btn {
     position: absolute;
-    top: 40px;
-    right: 50%;
-    transform: translateX(50%);
-    font-size: 30px;
+    top: 10px;
+    left: 10px;
+    /* שמאל למעלה */
     background: none;
     border: none;
-    color: #333;
+    color: white;
+    font-size: 30px;
     cursor: pointer;
     line-height: 1;
-    z-index: 10;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+/* תוכן הפופאפ */
+.popup-content h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 22px;
 }
 
-@keyframes scaleUp {
-    from {
-        transform: scale(0.8);
-    }
-
-    to {
-        transform: scale(1);
-    }
+/* קבוצת שדה בפופאפ */
+.popup-form-group {
+    margin-bottom: 15px;
 }
 
-@media (max-width: 600px) {
-    .popup-container {
-        width: 320px;
-        height: 320px;
-        padding: 30px;
-        border-radius: 20px;
-    }
-
-    .popup-content h2 {
-        font-size: 20px;
-    }
-
-    .close-popup-btn {
-        top: 10px;
-        right: 10px;
-    }
+/* שדה בפופאפ */
+.popup-form-group input {
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+    font-size: 16px;
+    border: none;
 }
 
-/* Mobile Bottom Navigation */
-/* Mobile Bottom Navigation */
+/* צ'קבוקס בפופאפ */
+.popup-form-checkbox {
+    color: white;
+    font-size: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+/* כפתור שליחה בפופאפ */
+.popup-submit-btn {
+    width: 100%;
+    background-color: #fef9c3;
+    color: #000;
+    border: 2px solid #5eead4;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* מעבר עכבר בפופאפ */
+.popup-submit-btn:hover {
+    transform: scale(1.02);
+}
+
+/* ניווט תחתון למובייל */
 .mobile-bottom-nav {
     display: none;
-    /* Hidden on desktop */
+    /* מוסתר בדסקטופ */
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 3000;
-    height: 60px;
+    background-color: #fff;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    direction: ltr;
-    /* Ensure fixed LTR order for buttons */
-    /* LTR Flex Standard: Start is Left. End is Right. */
-    /* Child 1: Whatsapp. Child 2: Details. */
-    /* Result: Whatsapp (Left), Details (Right). */
-    /* This matches the new request "Whatsapp Left, Details Right". */
+    z-index: 2500;
+    flex-direction: row;
 }
 
+/* כפתור בניווט מובייל */
 .mobile-nav-btn {
     flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    padding: 15px;
     text-decoration: none;
+    color: white;
     font-weight: 700;
     font-size: 18px;
-    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
 }
 
+/* כפתור וואטסאפ */
 .whatsapp-btn {
     background-color: #25D366;
-    /* WhatsApp Green */
-    border-right: 1px solid rgba(255, 255, 255, 0.3);
-    /* Add separator to Whatsapp (Right side of it) */
+    /* ירוק */
 }
 
+/* כפתור פרטים */
 .details-btn {
-    background-color: #0066ff;
-    /* Blue */
-    border-left: none;
-    /* Remove left separator from details if it was there */
+    background-color: #1a3b96;
+    /* כחול */
 }
 
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Hamburger Menu Styles */
+/* המבורגר */
 .hamburger {
     display: none;
+    /* מוסתר בדסקטופ */
     cursor: pointer;
-    z-index: 3001;
-    /* Above mobile menu */
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
+    padding: 10px;
 }
 
-.hamburger .bar {
-    width: 100%;
+/* קווי המבורגר */
+.bar {
+    display: block;
+    width: 25px;
     height: 3px;
+    margin: 5px auto;
     background-color: #333;
-    transition: all 0.6s ease;
-    /* Slower animation */
-    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Hamburger Animation */
-.hamburger.active .bar:nth-child(1) {
-    transform: translateY(8.5px) rotate(45deg);
-}
-
+/* אנימציית המבורגר פעיל */
 .hamburger.active .bar:nth-child(2) {
     opacity: 0;
 }
 
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
 .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8.5px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Mobile Menu Overlay */
-/* Mobile Menu Overlay - Base hidden, specific styles in media query */
+/* תפריט מובייל */
 .mobile-menu {
-    display: none;
+    position: fixed;
+    left: -100%;
+    /* מחוץ למסך */
+    top: 0;
+    /* מתחת להדר? לא, נשתלט עליו אבל מתחת להדר הראשי */
+    top: 70px;
+    /* גובה משוער של הדר */
+    gap: 0;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    /* text-align: center; */
+    transition: 0.3s;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+    z-index: 1001;
+    display: block;
+    /* כדי לאפשר טרנזישן */
 }
 
+/* תפריט מובייל פעיל */
 .mobile-menu.active {
-    opacity: 1;
-    pointer-events: auto;
-    display: flex;
+    left: 0;
+    /* כניסה למסך */
 }
 
+/* רשימה במובייל */
 .mobile-menu ul {
     list-style: none;
-    text-align: right;
-    /* Text align right for Hebrew */
-    width: 100%;
-    padding: 0 20px;
-    /* max-width removed to fill width */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
+/* פריט במובייל */
 .mobile-menu li {
-    margin: 15px 0;
-    border-bottom: 1px solid #f5f5f5;
-    padding-bottom: 10px;
+    margin: 0;
+    border-bottom: 1px solid #eee;
 }
 
+/* קישור במובייל */
 .mobile-menu a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    text-decoration: none;
     font-size: 18px;
     color: #333;
-    text-decoration: none;
     font-weight: 600;
-    display: block;
 }
 
-/* Mobile Logo in Menu */
-.mobile-logo-link img {
-    height: 60px;
-    margin-bottom: 20px;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-/* Mobile Dropdown */
+/* תת תפריט במובייל */
 .mobile-dropdown-menu {
     display: none;
+    /* מוסתר */
     background-color: #f9f9f9;
-    margin-top: 10px;
-    padding-right: 20px;
+    padding-left: 0;
 }
 
-.mobile-dropdown-parent:hover .mobile-dropdown-menu,
-.mobile-dropdown-parent.active .mobile-dropdown-menu {
+/* פריט בתת תפריט מובייל */
+.mobile-dropdown-menu li a {
+    padding-left: 20px;
+    /* הזחה */
+    padding-right: 40px;
+    /* הזחה מימין כי זה RTL */
+    font-size: 16px;
+    font-weight: 400;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* הצגת דרופדאון במובייל (דרך JS נצטרך להוסיף קלאס) */
+.mobile-dropdown-menu.active {
     display: block;
-    /* Show if hovered or clicked logic added */
 }
 
-/* Show Submenu always for simplicity in visual if just listing links? 
-   Or better, simple indent. 
-   Let's just indent and show them all or handle logic? 
-   User asked for "Hamburger menu... X closes it". 
-   Structure: "Careers" -> List. 
-   Let's keep it simple.
-*/
+/* חץ בדרופדאון מובייל */
+.mobile-dropdown-parent>a i {
+    transition: transform 0.3s;
+}
 
+.mobile-dropdown-parent.active>a i {
+    transform: rotate(180deg);
+}
+
+/* ריספונסיבי כללי למובייל */
 @media (max-width: 920px) {
-
-    /* Hide Desktop Floating Button */
-    .floating-chat {
-        display: none !important;
+    .hamburger {
+        display: block;
+        /* הצגת המבורגר */
     }
 
-    /* Hide Lead Form & Desktop Nav */
-    .lead-form-container,
+    .hamburger.active .bar {
+        background-color: #d32f2f;
+    }
+
     .desktop-nav {
         display: none;
+        /* הסתרת תפריט דסקטופ */
     }
 
-    /* Show Hamburger */
-    .hamburger {
-        display: flex;
-    }
-
-    /* Adjust header layout */
     .header-container {
         justify-content: space-between;
-        padding: 10px 20px;
-        flex-direction: row;
-        /* Ensure row */
-        align-items: center;
-        flex-wrap: wrap;
-        /* Allow menu to drop to next line */
+        /* פיזור */
+        /* padding: 10px 20px; */
     }
 
-    /* Logo adjustments */
     .logo {
         height: 60px;
-        /* Smaller logo on mobile */
+        /* לוגו קטן יותר */
     }
 
     .tagline {
-        display: block;
-        /* Show tagline */
-        font-size: 8px;
-        /* Smaller text */
-        margin-top: -15%;
-        /* Keep same relative ratio as desktop */
-        white-space: normal;
-        /* Allow wrap */
-        max-width: 150px;
-        line-height: 1.2;
+        font-size: 9px;
     }
 
-    /* Mobile Menu - Push Content Down style */
-    .mobile-menu {
+    /* הסתרת כפתור צ'אט צף */
+    .floating-chat {
         display: none;
-        width: 100%;
-        /* Full width */
-        background-color: #fff;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0;
-        /* padding handled inside or strict */
-        border-top: 1px solid #eee;
-        margin-top: 10px;
-        /* Space from header top row */
-
-        /* Reset absolute props */
-        position: static;
-        top: auto;
-        right: auto;
-        height: auto;
-        max-height: none;
-        box-shadow: none;
-        z-index: auto;
-        opacity: 1;
-        /* Always opaque when displayed */
-        pointer-events: auto;
-        transform: none;
-        transition: none;
-        /* JS toggles display via class, simple show/hide or height anim? 
-                           If we want animation, we need max-height transition. 
-                           For now, simple display: flex toggle. */
-        order: 999;
-        /* Force to end */
     }
 
-    .mobile-menu.active {
-        display: flex;
-        opacity: 1;
-    }
-
-    /* Adjust content wrapper since form is gone */
-    .content-wrapper {
-        justify-content: center;
-    }
-
-    .career-grid-container {
-        max-width: 100%;
-        width: 100%;
-    }
-
-    .career-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* Ensure 2 columns */
-    }
-
-    /* Show Bottom Nav */
+    /* הצגת ניווט תחתון */
     .mobile-bottom-nav {
         display: flex;
     }
 
+    /* ריפוד גוף הדף כדי לא להסתיר תוכן */
     body {
         padding-bottom: 60px;
     }
 }
 
-@media (max-width: 500px) {
-    .career-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+/* #ENDREGION Popups & Mobile Nav */
