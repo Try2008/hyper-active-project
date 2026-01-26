@@ -1116,3 +1116,163 @@ nav ul li a:hover {
     background-color: #f0f9ff;
     /* Light blue (AliceBlue/Azure ish) */
 }
+
+/* Contact Strip Section */
+.contact-strip-section {
+    width: 100%;
+    background-color: #1e40af;
+    /* Deep Blue from image */
+    padding: 40px 0;
+    margin: 60px 0;
+    /* Space from previous section */
+    text-align: center;
+    color: white;
+}
+
+.contact-strip-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.contact-strip-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Input Group styling */
+.strip-input-group {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    height: 50px;
+    width: 280px;
+    /* Slightly wider */
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* In RTL: Flex Start is Right. Child 1 is Label. Child 2 is Input. */
+}
+
+.strip-input-group label {
+    color: #333;
+    font-weight: 700;
+    font-size: 16px;
+    padding-right: 15px;
+    padding-left: 5px;
+    /* Separator pipe is in text */
+    white-space: nowrap;
+    cursor: default;
+    border-left: 1px solid transparent;
+    /* Optional if we wanted real border */
+}
+
+.strip-input-group input {
+    flex: 1;
+    border: none;
+    outline: none;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 16px;
+    background: transparent;
+    text-align: right;
+    /* Type from right */
+}
+
+/* Button Styling */
+.strip-submit-btn {
+    background-color: #fef9c3;
+    /* Light yellow */
+    color: #000;
+    border: 3px solid #5eead4;
+    /* Teal border */
+    font-size: 24px;
+    font-weight: 800;
+    padding: 0 40px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    white-space: nowrap;
+}
+
+.strip-submit-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Row */
+.form-footer-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.checkbox-wrapper input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    /* Light grey */
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .form-row {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .strip-input-group {
+        width: 100%;
+    }
+
+    .strip-submit-btn {
+        width: 100%;
+    }
+}
