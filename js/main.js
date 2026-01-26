@@ -63,15 +63,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (hamburger && mobileMenu) {
         hamburger.addEventListener('click', function () {
+            // Toggle active class
             hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('active');
 
-            // Toggle body overflow to prevent scrolling when menu is open
-            if (mobileMenu.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
+            // Allow scrolling even when menu is open per user request "Still scroll down to rest of site"
+            // document.body.style.overflow = 'hidden'; <--- Removed
         });
 
         // Close menu when clicking a link
