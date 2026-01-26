@@ -758,11 +758,13 @@ nav ul li a:hover {
 /* About Us Section Styles */
 .about-us-section {
     width: 100%;
-    margin: 60px 0;
+    margin: 60px 0 0 0;
+    /* Remove bottom margin to connect with next section */
     padding: 60px 0;
-    background-color: #f0f8ff;
-    /* Light blue background */
-    box-shadow: inset 0 15px 15px -10px rgba(0, 0, 0, 0.05), inset 0 -15px 15px -10px rgba(0, 0, 0, 0.05);
+    background-color: #f0fdf4;
+    /* Match How It Works background */
+    box-shadow: inset 0 15px 15px -10px rgba(0, 0, 0, 0.05);
+    /* Remove bottom shadow */
 }
 
 .about-us-container {
@@ -806,15 +808,16 @@ nav ul li a:hover {
 .how-it-works-section {
     width: 100%;
     position: relative;
-    padding: 60px 0;
-    padding-bottom: 60px;
+    padding-top: 0;
+    /* No top padding to look seamless */
     background-color: #f0fdf4;
     /* Very light background to separate */
 }
 
 .how-it-works-section .section-title {
     text-align: center;
-    font-size: 50px;
+    font-size: 36px;
+    /* Match About Us title size */
     font-weight: 800;
     margin-bottom: 40px;
     color: #000;
