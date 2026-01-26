@@ -1425,6 +1425,7 @@ nav ul li a:hover {
 }
 
 /* Mobile Bottom Navigation */
+/* Mobile Bottom Navigation */
 .mobile-bottom-nav {
     display: none;
     /* Hidden on desktop */
@@ -1435,6 +1436,12 @@ nav ul li a:hover {
     z-index: 3000;
     height: 60px;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    direction: ltr;
+    /* Ensure fixed LTR order for buttons */
+    /* LTR Flex Standard: Start is Left. End is Right. */
+    /* Child 1: Whatsapp. Child 2: Details. */
+    /* Result: Whatsapp (Left), Details (Right). */
+    /* This matches the new request "Whatsapp Left, Details Right". */
 }
 
 .mobile-nav-btn {
@@ -1452,14 +1459,139 @@ nav ul li a:hover {
 .whatsapp-btn {
     background-color: #25D366;
     /* WhatsApp Green */
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    /* Add separator to Whatsapp (Right side of it) */
 }
 
 .details-btn {
     background-color: #0066ff;
     /* Blue */
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
-    /* Separator */
+    border-left: none;
+    /* Remove left separator from details if it was there */
 }
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 3001;
+    /* Above mobile menu */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Hamburger Animation */
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* RTL usually, but strict Reset */
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 3000;
+    /* Under Hamburger */
+    flex-direction: column;
+    align-items: center;
+    /* Center horizontally */
+    justify-content: flex-start;
+    padding-top: 100px;
+    /* Space for X */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    /* Click through when hidden */
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+    display: flex;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    text-align: right;
+    /* Text align right for Hebrew */
+    width: 100%;
+    padding: 0 40px;
+    max-width: 400px;
+}
+
+.mobile-menu li {
+    margin: 20px 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.mobile-menu a {
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 700;
+    display: block;
+}
+
+/* Mobile Logo in Menu */
+.mobile-logo-link img {
+    height: 60px;
+    margin-bottom: 20px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Mobile Dropdown */
+.mobile-dropdown-menu {
+    display: none;
+    background-color: #f9f9f9;
+    margin-top: 10px;
+    padding-right: 20px;
+}
+
+.mobile-dropdown-parent:hover .mobile-dropdown-menu,
+.mobile-dropdown-parent.active .mobile-dropdown-menu {
+    display: block;
+    /* Show if hovered or clicked logic added */
+}
+
+/* Show Submenu always for simplicity in visual if just listing links? 
+   Or better, simple indent. 
+   Let's just indent and show them all or handle logic? 
+   User asked for "Hamburger menu... X closes it". 
+   Structure: "Careers" -> List. 
+   Let's keep it simple.
+*/
 
 @media (max-width: 920px) {
 
@@ -1468,9 +1600,35 @@ nav ul li a:hover {
         display: none !important;
     }
 
-    /* Hide Lead Form in Career Section */
-    .lead-form-container {
+    /* Hide Lead Form & Desktop Nav */
+    .lead-form-container,
+    .desktop-nav {
         display: none;
+    }
+
+    /* Show Hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Adjust header layout */
+    .header-container {
+        justify-content: space-between;
+        padding: 10px 20px;
+        flex-direction: row;
+        /* Ensure row */
+        align-items: center;
+    }
+
+    /* Logo adjustments if needed */
+    .logo {
+        height: 60px;
+        /* Smaller logo on mobile */
+    }
+
+    .tagline {
+        display: none;
+        /* Hide tagline on mobile if too crowded, or reduce size. */
     }
 
     /* Adjust content wrapper since form is gone */
@@ -1485,7 +1643,7 @@ nav ul li a:hover {
 
     .career-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* Ensure 2 columns on mobile */
+        /* Ensure 2 columns */
     }
 
     /* Show Bottom Nav */
@@ -1493,7 +1651,6 @@ nav ul li a:hover {
         display: flex;
     }
 
-    /* Add padding to body so buttons don't cover content */
     body {
         padding-bottom: 60px;
     }
