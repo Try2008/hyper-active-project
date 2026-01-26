@@ -1362,7 +1362,9 @@ nav ul li a:hover {
     cursor: pointer;
     transition: background-color 0.2s;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 100%;
+    width: 70%;
+    margin: 10px auto 0 auto;
+    display: block;
 }
 
 .popup-submit-btn:hover {
