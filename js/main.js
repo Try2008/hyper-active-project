@@ -21,4 +21,38 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+    // Popup Logic
+    const popupOverlay = document.getElementById('popup-overlay');
+    const closePopupBtn = document.getElementById('close-popup');
+    const popupForm = popupOverlay.querySelector('form');
+
+    // Show popup immediately on load
+    if (popupOverlay) {
+        popupOverlay.style.display = 'flex';
+    }
+
+    // Close popup on X click
+    if (closePopupBtn) {
+        closePopupBtn.addEventListener('click', function () {
+            popupOverlay.style.display = 'none';
+        });
+    }
+
+    // Close popup on background click (optional)
+    if (popupOverlay) {
+        popupOverlay.addEventListener('click', function (e) {
+            if (e.target === popupOverlay) {
+                popupOverlay.style.display = 'none';
+            }
+        });
+    }
+
+    // Prevent form submission refresh for demo purposes
+    if (popupForm) {
+        popupForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('תודה שנרשמת!');
+            popupOverlay.style.display = 'none';
+        });
+    }
 });
